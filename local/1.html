@@ -801,7 +801,8 @@ right: .75rem;
 <div class='hide' id='kind'>chapter</div>
 <div class='index-boxnbt'>
 <header class='entry-header'>
-<h1 class='post-title entry-title' itemprop='headline'><span class='material-symbols-outlined menu-button' onclick='showMenu()'>menu</span><span id='title'>1. Welcome to ELI</span></h1>
+<h1 class='post-title entry-title' itemprop='headline'><span class='material-symbols-outlined menu-button' onclick='showMenu()'>menu</span><span id='title'>1. Becoming an Electrician in
+Utah</span></h1>
 </header>
 <div id='menu'>
 <div class='menu-header'><span class='material-symbols-outlined menu-button' onclick='hideMenu()'>close</span><span id='book-title'><a href='toc.html'>PPWJS</a></span></div>
@@ -823,198 +824,412 @@ right: .75rem;
 <button class='nav' id='prior-button' onclick='navigate(&#39;prior&#39;)'><span class='material-symbols-outlined'>arrow_back</span></button>
 <button class='nav' id='next-button' onclick='navigate(&#39;next&#39;)'><span class='material-symbols-outlined'>arrow_forward</span></button>
               
-              <!--postBegin--><div class="module">monaco</div>
-<h1 data-number="1" id="welcome-to-eli"><span
-class="header-section-number">1</span> Welcome to ELI</h1>
-<p>Real wealth is created by operations — the work of turning inputs
-into something worth more than the parts you started with. Raw
-materials, labor, equipment, and information go in; finished goods and
-satisfied customers come out. Everything you will study in this course
-is, at bottom, about making that transformation faster, cheaper, and
-more reliable. This book adds one more tool to that work: the ability to
-direct it with code.</p>
-<h2 data-number="1.1" id="what-programming-actually-is"><span
-class="header-section-number">1.1</span> What Programming Actually
-Is</h2>
-<p>Programming is the craft of giving a computer clear, precise
-instructions so it can do work for you. It is a kind of conversation —
-you learn to express a task in a language the machine understands, and
-it does exactly what you describe. Not what you meant, not roughly what
-you asked, but precisely what your instructions say. That exactness is
-what makes programming both powerful and, now and then, humbling.</p>
-<p>If this sounds familiar, it should: an operation is also a sequence
-of precise steps. “Reorder parts when we’re running low” is how a person
-says it. A computer can’t act on that — it needs the exact rule:
-<em>when on-hand quantity falls to or below the reorder point, place an
-order.</em> Writing a program is the discipline of turning a fuzzy
-operational intention into steps explicit enough that a machine can
-carry them out the same way every time.</p>
-<p>A recipe is a program. A set of directions is a program. A standard
-operating procedure is very nearly a program already. The difference is
-that a person fills in gaps — “cook until done,” “restock as needed” —
-and a computer cannot. It needs every step, in order, with no
-ambiguity.</p>
-<p>So programming is more than syntax. It is learning to think in a way
-a computer can follow: breaking a problem into smaller steps, testing
-your assumptions, building something small and growing it piece by
-piece. Over time you develop a mental toolkit for exactly the kind of
-structured problem-solving operations work rewards.</p>
-<p>JavaScript, the language used throughout this book, is a friendly
-place to begin. It runs in every modern browser, so you already have
-what you need to experiment. Write a line, press Enter, see the result.
-That instant feedback is one reason it became one of the most widely
-used languages in the world.</p>
-<p>By the end of this book you won’t just know some JavaScript — you’ll
-know how to think like a programmer, and how to put that thinking to
-work on the operations problems you’ll meet in the rest of the
-course.</p>
-<h2 data-number="1.2" id="how-computers-think"><span
-class="header-section-number">1.2</span> How Computers Think</h2>
-<p>If programming is learning to communicate with a computer, it helps
-to understand what you’re talking to. A computer doesn’t think like a
-person. It doesn’t guess, infer, or read between the lines. Its version
-of “thinking” is closer to following a procedure with absolute,
-unwavering obedience.</p>
-<p>Underneath, a computer makes billions of tiny decisions a second,
-each one trivially simple: yes or no, true or false, on or off. From
-those microscopic choices everything else is built. Because the machine
-runs on such strict rules, it needs instructions that are equally
-strict. Leave out a detail and it won’t supply it. Phrase something
-vaguely and it won’t interpret your intent. It does exactly what you
-wrote — even when that’s not what you wanted.</p>
-<p>This is why so much of programming is breaking problems down.
-Consider a task that feels like one action to a person: “flag every item
-that’s below its reorder point.” To a computer that’s a series of tiny
-operations — look at the first item, compare its on-hand quantity to its
-reorder point, decide whether it’s short, record the result, move to the
-next item, and repeat until the list is done. What we experience as a
-single thought becomes dozens of precise micro-steps.</p>
-<p>The payoff is that once the machine knows those steps, it runs them
-with speed and consistency no person can match. It never tires, never
-gets distracted, never skips a line. You can encode an operational
-process once and have it executed perfectly every time — which is
-exactly the kind of reliability operations managers spend their careers
-trying to build.</p>
-<p>As you learn to program, you’ll pick up a little of this
-computational habit of mind: breaking work into pieces, stating it
-clearly, anticipating the edge cases. You’re not trying to think
-<em>like</em> a computer — you’re learning to think <em>for</em> one,
-giving it the structure it needs to do the work you want.</p>
-<h2 data-number="1.3"
-id="why-javascript-is-a-great-first-language"><span
-class="header-section-number">1.3</span> Why JavaScript Is a Great First
-Language</h2>
-<p>Choosing a first programming language is a bit like choosing a first
-instrument: you want something approachable, versatile, and rewarding
-enough to make real progress early. JavaScript fits that role well,
-which is why so many beginners start here.</p>
-<p>Its biggest strength is accessibility. You don’t need to install
-anything — if you have a browser, you can write and run JavaScript and
-see results instantly. That quick feedback makes learning feel like play
-rather than a chore. It’s also everywhere: it runs websites, servers,
-mobile apps, and the office tools you already use to manage operations
-data. And it’s forgiving — you can experiment, make mistakes, and learn
-by doing, while the language still has room to grow with you. If you get
-stuck, a huge community has almost certainly answered your question
-already.</p>
-<h3 data-number="1.3.1"
-id="beyond-the-browser-where-javascript-can-run"><span
-class="header-section-number">1.3.1</span> Beyond the Browser: Where
-JavaScript Can Run</h3>
-<p>Most people picture JavaScript running inside a web page. That’s
-where it began, but the language has grown well past its first home.
-Today it runs in browsers, on servers, inside office documents, in the
-cloud, and on your own machine. This book leans into that wider world,
-because the operations tools you’ll build live where your data already
-is — in spreadsheets.</p>
-<h3 data-number="1.3.2"
-id="javascript-variants-and-scripting-platforms"><span
-class="header-section-number">1.3.2</span> JavaScript Variants and
-Scripting Platforms</h3>
-<p>Several platforms build on JavaScript to make it more useful for
-real-world automation:</p>
-<ul>
-<li><strong>Google Apps Script</strong> — a cloud scripting environment
-that automates and extends Google Workspace (Sheets, Docs, Gmail, Drive)
-using a JavaScript-like syntax. If you’ve ever wished a spreadsheet
-could email you when stock runs low, this is how.</li>
-<li><strong>Microsoft Office Scripts</strong> — a close cousin for
-automating Excel on the web, written in TypeScript.</li>
-<li><strong>TypeScript</strong> — JavaScript plus optional
-type-checking, widely used on larger projects to catch errors
-early.</li>
-</ul>
-<p>The common theme: they let you use JavaScript to automate everyday
-workflows, usually without installing anything — which makes them ideal
-for getting practical results fast.</p>
-<h3 data-number="1.3.3" id="javascript-beyond-the-cloud-node.js"><span
-class="header-section-number">1.3.3</span> JavaScript Beyond the Cloud:
-Node.js</h3>
-<p>Browser JavaScript is deliberately limited — it can’t touch your file
-system or your operating system directly. <strong>Node.js</strong>
-removes that ceiling, letting JavaScript run on your own machine like
-any general-purpose language: reading and writing files, building
-command-line tools and web servers, working with databases, and
-automating local tasks. It turned JavaScript from a browser-only
-language into a universal platform.</p>
-<h3 data-number="1.3.4" id="why-these-environments-matter"><span
-class="header-section-number">1.3.4</span> Why These Environments
-Matter</h3>
-<p>Seeing these platforms side by side shows how far one language
-reaches — the same core JavaScript can automate spreadsheets, extend
-email, power websites, run servers, and talk to cloud services. Each has
-its own flavor, but they share a foundation, so once you have the
-fundamentals you can move between them with surprising ease. This book
-gives you hands-on time with several, starting where operations data
-lives.</p>
-<h2 data-number="1.4" id="how-to-run-javascript"><span
-class="header-section-number">1.4</span> How to Run JavaScript</h2>
-<p>One reason JavaScript makes a great first language is that you can
-run it almost anywhere, with no special setup. This section covers the
-main options, from the simplest to the ones you’ll meet later.</p>
-<h3 data-number="1.4.1"
-id="running-javascript-in-the-browser-console"><span
-class="header-section-number">1.4.1</span> Running JavaScript in the
-Browser Console</h3>
-<p>Every modern browser ships with a JavaScript console — the fastest
-way to experiment.</p>
+              <!--postBegin--><div class="module">andy</div>
+<h1 data-number="1" id="becoming-an-electrician-in-utah"><span
+class="header-section-number">1</span> Becoming an Electrician in
+Utah</h1>
+<p>Electricity is invisible until it isn’t — until a light turns on, a
+motor starts, or a fault takes a circuit down. An electrician’s job is
+to make that power do useful work safely: size conductors correctly,
+protect people and equipment from overcurrent, ground and bond systems
+so faults clear, and follow the National Electrical Code so
+installations stay predictable for the next person who opens the
+panel.</p>
+<p>This book prepares you for the <strong>Utah Journeyman
+Electrician</strong> licensing path. It teaches the theory,
+calculations, and code habits that show up on the written exam, and it
+introduces the hands-on skills Utah tests on the practical exam. You
+will still need the official references on exam day — especially the
+<strong>2023 National Electrical Code (NEC)</strong> and <strong>Ugly’s
+Electrical References</strong> — but by the end of these chapters you
+should know what to look up, how to calculate, and how to think like a
+licensed electrician.</p>
+<h2 data-number="1.1" id="what-utah-expects-of-you"><span
+class="header-section-number">1.1</span> What Utah Expects of You</h2>
+<p>Utah licenses electricians through the Division of Professional
+Licensing (DOPL). For a <strong>Journeyman Electrician</strong>, the
+usual route is:</p>
 <ol type="1">
-<li><p>Open any webpage.</p></li>
-<li><p>Right-click and choose <strong>Inspect</strong> or
-<strong>Developer Tools</strong>.</p></li>
-<li><p>Open the <strong>Console</strong> tab.</p></li>
-<li><p>Type a line such as:</p>
-<pre class="javascript-example"><code>console.log(&quot;Hello from JavaScript!&quot;)</code></pre></li>
-<li><p>Press Enter and see the result instantly.</p></li>
+<li>Complete a four-year apprenticeship (at least 576 classroom hours)
+<strong>or</strong> document the longer experience-only path.</li>
+<li>Accumulate the required on-the-job hours under a licensed journeyman
+or master.</li>
+<li>Pass the <strong>Utah Journeyman Electrician written exam</strong>
+(combined theory and code).</li>
+<li>Pass the <strong>Utah Electrician Practical exam</strong>.</li>
+<li>Apply to DOPL for the license once exams and experience are
+verified.</li>
 </ol>
-<p>The console is perfect for trying small ideas without any setup.</p>
-<p><strong>A note on semicolons.</strong> JavaScript belongs to the
-“C-family” of languages, many of which require a semicolon to end every
-statement. JavaScript does not, as long as each statement is on its own
-line. You’ll see semicolons in lots of online examples out of habit; in
-this book we leave them off to keep the examples clean. Whether you use
-them in your own code is up to you.</p>
-<h3 data-number="1.4.2" id="running-javascript-in-other-platforms"><span
-class="header-section-number">1.4.2</span> Running JavaScript in Other
-Platforms</h3>
-<p>Throughout the book you’ll also use environments that run JavaScript
-or a close relative to automate real tasks: online editors like JSFiddle
-and CodePen, JavaScript embedded in a web page, <strong>Google Apps
-Script</strong> for Google Workspace, <strong>Microsoft Office
-Scripts</strong> for Excel on the web, cloud runtimes, and
-<strong>Node.js</strong> for running code locally. Each runs code a
-little differently, but the core language stays familiar.</p>
-<h3 data-number="1.4.3" id="choosing-the-right-environment"><span
-class="header-section-number">1.4.3</span> Choosing the Right
-Environment</h3>
-<p>There’s no single correct way to run JavaScript — it depends on the
-job: quick experiments in the <strong>browser console</strong>,
-interactive demos in <strong>online editors</strong>, web projects in
-<strong>HTML + JavaScript</strong>, local tools in
-<strong>Node.js</strong>, and automation in <strong>Apps Script or
-Office Scripts</strong>. Our detailed examples will begin in Google Apps
-Script, inside the spreadsheets where operations data already lives.</p>
+<p>As of August 1, 2025, Journeyman candidates take <strong>one combined
+written exam</strong> covering theory and code — not separate Theory and
+Code tests. You need <strong>75%</strong> to pass. You get <strong>240
+minutes</strong> for <strong>100 questions</strong>.</p>
+<h3 data-number="1.1.1" id="written-exam-topic-weights"><span
+class="header-section-number">1.1.1</span> Written exam topic
+weights</h3>
+<p>These are the subject areas Prov publishes for the Journeyman exam.
+Chapters in this book map to them:</p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Questions (approx.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grounding &amp; Bonding</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Overcurrent Protection</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Services, Feeders &amp; Branch Circuits</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Conductors &amp; Cables</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Lighting &amp; General Use Equipment</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Raceways &amp; Enclosures</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Voltage Drop</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Current</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Definitions &amp; General Requirements</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Motors &amp; Controllers</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Resistance</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Special Occupancies &amp; Equipment</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Voltage</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Power</td>
+<td>5</td>
+</tr>
+<tr>
+<td>State Laws &amp; Rules</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Grounding, overcurrent protection, and services/feeders/branch
+circuits together are nearly a third of the test. Theory topics
+(voltage, current, resistance, power, voltage drop) are not “extra” —
+they are how you answer calculation questions under time pressure.</p>
+<h3 data-number="1.1.2" id="allowed-references-written-exam"><span
+class="header-section-number">1.1.2</span> Allowed references (written
+exam)</h3>
+<p>Bring what Prov lists for your exam date. For Journeyman, that
+typically includes:</p>
+<ul>
+<li><strong>NFPA 70 — National Electrical Code, 2023
+edition</strong></li>
+<li><strong>Ugly’s Electrical References, 2023</strong></li>
+<li>Utah statutes and rules: Construction Trades Licensing Act (Title
+58, Chapter 55), Electricians Licensing Act Rule (R156-55b), DOPL
+Licensing Act (58-1), and related division rules</li>
+</ul>
+<p>Know how to navigate the NEC table of contents and index. Knowing
+<em>where</em> a rule lives is as valuable as memorizing every
+number.</p>
+<h2 data-number="1.2" id="how-this-book-is-organized"><span
+class="header-section-number">1.2</span> How This Book Is Organized</h2>
+<ol type="1">
+<li><strong>Chapter 1</strong> — Licensing path, safety mindset, and
+what electricity is</li>
+<li><strong>Chapter 2</strong> — Voltage, current, resistance, Ohm’s
+law, and power</li>
+<li><strong>Chapter 3</strong> — Circuits, AC concepts, and voltage
+drop</li>
+<li><strong>Chapter 4</strong> — Conductors, cables, raceways, and
+enclosures</li>
+<li><strong>Chapter 5</strong> — Overcurrent protection, services,
+feeders, and branch circuits</li>
+<li><strong>Chapter 6</strong> — Grounding and bonding</li>
+<li><strong>Chapter 7</strong> — Boxes, lighting, and general-use
+equipment</li>
+<li><strong>Chapter 8</strong> — Motors, controllers, and special
+occupancies</li>
+<li><strong>Chapter 9</strong> — Utah law and rules, practical exam
+skills, and exam strategy</li>
+</ol>
+<p>Read in order if you are new to theory. If you already have field
+experience, skim Chapters 2–3, then spend extra time on Chapters 5–6 and
+9.</p>
+<h2 data-number="1.3" id="safety-first-why-code-exists"><span
+class="header-section-number">1.3</span> Safety First: Why Code
+Exists</h2>
+<p>The NEC is not a how-to manual for every installation method. It is a
+<strong>minimum safety standard</strong> for the practical safeguarding
+of persons and property from electrical hazards. Utah adopts the NEC
+(with state amendments) as part of its construction codes. Passing the
+exam means showing you can apply those minimums — not invent your own
+“good enough.”</p>
+<p>Three hazards drive almost every rule you will study:</p>
+<ul>
+<li><strong>Shock</strong> — current through the body. Even small
+currents can disrupt heart rhythm.</li>
+<li><strong>Arc flash / arc blast</strong> — energy released when
+current jumps through air. Heat, light, pressure, and shrapnel.</li>
+<li><strong>Fire</strong> — overloaded conductors, loose connections,
+and arcing faults that ignite surroundings.</li>
+</ul>
+<p>Protection strategies you will see again and again:</p>
+<ul>
+<li>Size conductors and terminations for the load and environment.</li>
+<li>Use overcurrent devices that open before conductors overheat.</li>
+<li>Provide an effective ground-fault path so breakers and fuses can
+clear faults quickly.</li>
+<li>Keep live parts guarded, enclosed, and identified.</li>
+<li>Work de-energized whenever practical; when you cannot, follow
+lockout/tagout and safe work practices (NFPA 70E territory — especially
+relevant for Master-level law/safety questions).</li>
+</ul>
+<h2 data-number="1.4" id="what-electricity-is-working-picture"><span
+class="header-section-number">1.4</span> What Electricity Is (Working
+Picture)</h2>
+<p>You do not need a physics degree to pass, but you do need a clear
+mental model.</p>
+<p><strong>Charge</strong> is a property of matter. Electrons carry
+negative charge. When electrons are forced to move through a conductor,
+we call that motion <strong>electric current</strong>.</p>
+<p><strong>Voltage</strong> (electromotive force) is the pressure that
+pushes charge. Higher voltage can push the same current through more
+resistance, or push more current through the same resistance.</p>
+<p><strong>Current</strong> is the rate of charge flow, measured in
+<strong>amperes</strong> (A). One ampere is a large flow for a person —
+household branch circuits are often 15 A or 20 A, and that is more than
+enough to kill if it takes a path through the body.</p>
+<p><strong>Resistance</strong> opposes current. Every conductor has some
+resistance; loads (heaters, lamps, motors) are designed to present
+useful resistance or impedance so work gets done.</p>
+<p><strong>Power</strong> is the rate of energy use, measured in
+<strong>watts</strong> (W). On AC systems you will also meet
+<strong>volt-amperes</strong> (VA) and <strong>power factor</strong> —
+Chapter 2 and 3 cover those carefully.</p>
+<p>Think of a simple DC circuit as:</p>
+<ul>
+<li>A <strong>source</strong> (battery or supply) that provides
+voltage</li>
+<li><strong>Conductors</strong> that form a closed path</li>
+<li>A <strong>load</strong> that converts electrical energy into heat,
+light, or motion</li>
+<li>Optionally a <strong>switch</strong> that opens or closes the
+path</li>
+<li>Optionally an <strong>overcurrent device</strong> that opens the
+path if current goes too high</li>
+</ul>
+<p>If the path is open, current stops. If the path is closed and
+resistance is low (a short), current tries to become enormous — that is
+why overcurrent protection exists.</p>
+<h2 data-number="1.5" id="ac-versus-dc-first-pass"><span
+class="header-section-number">1.5</span> AC Versus DC (First Pass)</h2>
+<p><strong>Direct current (DC)</strong> flows in one direction.
+Batteries and many electronics use DC.</p>
+<p><strong>Alternating current (AC)</strong> reverses direction many
+times per second. In North America, utility power is typically
+<strong>60 Hz</strong> — sixty cycles per second. Homes and commercial
+buildings in Utah are almost entirely AC systems: often <strong>120/240
+V</strong> single-phase residential, and <strong>120/208 V</strong> or
+<strong>277/480 V</strong> three-phase commercial/industrial.</p>
+<p>The journeyman exam expects you to:</p>
+<ul>
+<li>Use Ohm’s law and power formulas on DC and simple AC resistive
+circuits</li>
+<li>Apply voltage-drop formulas to AC branch circuits and feeders</li>
+<li>Understand single-phase and three-phase relationships for motors and
+services</li>
+<li>Apply NEC rules written for AC premises wiring</li>
+</ul>
+<p>You will deepen AC ideas in Chapter 3. For now, remember: most
+“house” calculations use RMS AC values (the effective values printed on
+equipment), not peak wave values.</p>
+<h2 data-number="1.6" id="the-language-of-the-trade"><span
+class="header-section-number">1.6</span> The Language of the Trade</h2>
+<p>Exam questions often hinge on definitions. Start collecting these
+carefully; Chapter 5 and 6 will use them constantly.</p>
+<ul>
+<li><strong>Branch circuit</strong> — conductors between the final
+overcurrent device and the outlets</li>
+<li><strong>Feeder</strong> — conductors between the service equipment
+(or source of a separately derived system) and the final branch-circuit
+overcurrent device</li>
+<li><strong>Service</strong> — conductors and equipment bringing utility
+power to the premises wiring system</li>
+<li><strong>Overcurrent</strong> — current beyond rated capacity —
+overload, short circuit, or ground fault</li>
+<li><strong>Grounded conductor</strong> — normally current-carrying
+conductor intentionally grounded (often the neutral)</li>
+<li><strong>Equipment grounding conductor (EGC)</strong> — bonding path
+for fault current, not a normal current path</li>
+<li><strong>Grounding electrode conductor (GEC)</strong> — connects the
+system grounded conductor / equipment to the grounding electrode</li>
+<li><strong>Ampacity</strong> — maximum current a conductor can carry
+continuously under conditions of use without exceeding temperature
+rating</li>
+</ul>
+<p>When a question says “grounded,” “grounding,” or “bonding,” read
+slowly. Those words are not interchangeable — Chapter 6 exists largely
+because people confuse them.</p>
+<h2 data-number="1.7" id="how-to-study-with-this-book"><span
+class="header-section-number">1.7</span> How to Study With This
+Book</h2>
+<ol type="1">
+<li><strong>Read for understanding, then calculate.</strong> Theory
+questions are faster if the formulas are automatic.</li>
+<li><strong>Keep a formula sheet</strong> you write yourself: Ohm’s law,
+power, voltage drop, series/parallel resistance, three-phase power,
+motor FLC lookup habits.</li>
+<li><strong>Practice looking things up in the NEC.</strong> Tab Articles
+100, 110, 210, 215, 220, 230, 240, 250, 300, 310, 314, 430, and Chapter
+9 tables if your exam allows tabs per Prov rules.</li>
+<li><strong>Do the practice problems</strong> at the end of each chapter
+without peeking, then check your method — not just the final
+number.</li>
+<li><strong>Treat Utah law questions as open-book navigation.</strong>
+Know which act or rule answers licensing, supervision, and scope-of-work
+questions.</li>
+</ol>
+<h2 data-number="1.8" id="practice-mindset-check"><span
+class="header-section-number">1.8</span> Practice: Mindset Check</h2>
+<ol type="1">
+<li>What score and time limit apply to the Utah Journeyman written exam
+after the August 2025 format change?</li>
+<li>Name the two primary references most calculation/code candidates
+live in on exam day.</li>
+<li>Why does a short circuit demand overcurrent protection even if the
+load itself is small?</li>
+<li>In one sentence each, distinguish branch circuit, feeder, and
+service.</li>
+<li>Which written-exam topic currently carries the most questions?</li>
+</ol>
+<h3 data-number="1.8.1" id="answers"><span
+class="header-section-number">1.8.1</span> Answers</h3>
+<ol type="1">
+<li>75% in 240 minutes on a 100-question combined theory/code exam.</li>
+<li>NEC 2023 and Ugly’s Electrical References 2023 (plus Utah
+statutes/rules for law items).</li>
+<li>A short creates a very low-resistance path, so current can rise far
+above conductor ampacity and start a fire or destroy equipment unless a
+fuse or breaker opens.</li>
+<li>Branch circuit: final OCPD to outlets. Feeder: service/source
+equipment toward the final branch OCPD. Service: utility supply into the
+premises system.</li>
+<li>Grounding &amp; Bonding.</li>
+</ol>
+<h2 data-number="1.9" id="looking-ahead"><span
+class="header-section-number">1.9</span> Looking Ahead</h2>
+<p>Chapter 2 builds the calculation foundation: voltage, current,
+resistance, Ohm’s law, and power. If those four ideas are solid, voltage
+drop, conductor sizing judgment, and motor questions become much less
+intimidating.</p>
+<p>Bring curiosity and a calculator you know well. The exam rewards
+clear thinking under time pressure — and clear thinking starts with the
+fundamentals.</p>
 <hr />
+<h2 data-number="1.10" id="demo"><span
+class="header-section-number">1.10</span> Demo</h2>
+<circuit-lab>
+<script type="text/yaml">
+title: Doorbell Demo Lab
+margin: 40
+passMessage: Pass — Front has its own chime; Rear and Side share the Rear chime.
+hints:
+  demo: >-
+    Demo: press Front for one sound; Rear and Side share the other
+    (as in a typical residential chime). Double-click a wire to bend it;
+    Undo (Ctrl/Cmd+Z) reverses wire edits.
+  lab: >-
+    Lab: wire so Front has its own path and Rear + Side share the Rear chime.
+    Color matches the terminal you click. Undo reverses edits. Then Check to grade.
+
+# Positions: numbers, percents ("42%"), or expressions
+# (margin, left, top, center, right, bottom) with optional +/- offset.
+components:
+  - id: chime
+    type: chime
+    x: margin
+    y: margin
+  - id: transformer
+    type: transformer
+    x: right-190
+    y: margin
+  - id: terminalBlock
+    type: terminal-block
+    x: center-140
+    y: 42%
+  - id: power
+    type: power
+    x: margin
+    y: bottom-128
+  - id: buttonFront
+    type: button
+    label: Front
+    x: center-160
+    y: bottom-118
+  - id: buttonRear
+    type: button
+    label: Rear
+    x: center-48
+    y: bottom-118
+  - id: buttonSide
+    type: button
+    label: Side
+    x: center+64
+    y: bottom-118
+
+# Demo mode starts with these wires. Lab mode starts empty (student wires it).
+demo:
+  wires:
+    # 120V: power → terminal block → transformer
+    - { from: power.l1, to: terminalBlock.l1, color: blue }
+    - { from: power.n, to: terminalBlock.n, color: gray }
+    - { from: power.g, to: terminalBlock.g, color: green }
+    - { from: terminalBlock.l1, to: transformer.pri-l1, color: blue }
+    - { from: terminalBlock.n, to: transformer.pri-n, color: gray }
+    - { from: terminalBlock.g, to: transformer.pri-g, color: green }
+    # 24V: transformer hot → chime Trans; COM → buttons
+    - { from: transformer.sec-hot, to: chime.trans, color: red }
+    - { from: transformer.sec-com, to: terminalBlock.com, color: gray }
+    - { from: terminalBlock.com, to: buttonFront.com, color: gray }
+    - { from: terminalBlock.com, to: buttonRear.com, color: gray }
+    - { from: terminalBlock.com, to: buttonSide.com, color: gray }
+    # Front own path; Rear + Side share Rear chime
+    - { from: buttonFront.sig, to: terminalBlock.sig-f, color: red }
+    - { from: terminalBlock.sig-f, to: chime.front, color: red }
+    - { from: buttonRear.sig, to: terminalBlock.sig-r, color: red }
+    - { from: buttonSide.sig, to: terminalBlock.sig-s, color: red }
+    - { from: terminalBlock.sig-s, to: terminalBlock.sig-r, color: red }
+    - { from: terminalBlock.sig-r, to: chime.rear, color: red }
+    </script>
+<p></circuit-lab></p>
 <!--postEnd-->
               </div>
 </div>
