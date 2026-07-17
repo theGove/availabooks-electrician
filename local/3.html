@@ -782,7 +782,7 @@ right: .75rem;
     }    
 
   </script>
-<link href='https://draft.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=210ce249-8dea-4558-980a-5c1935544cb7' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://draft.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=210ce249-8dea-4558-980a-5c1935544cb7' rel='stylesheet'/></noscript>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=52990b10-826a-4186-92b2-887cd56185a0' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=52990b10-826a-4186-92b2-887cd56185a0' rel='stylesheet'/></noscript>
 <meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
 <meta name='google-adsense-platform-domain' content='blogspot.com'/>
 
@@ -801,8 +801,8 @@ right: .75rem;
 <div class='hide' id='kind'>chapter</div>
 <div class='index-boxnbt'>
 <header class='entry-header'>
-<h1 class='post-title entry-title' itemprop='headline'><span class='material-symbols-outlined menu-button' onclick='showMenu()'>menu</span><span id='title'>3. Getting Started with Google Apps
-Script in Google Sheets</span></h1>
+<h1 class='post-title entry-title' itemprop='headline'><span class='material-symbols-outlined menu-button' onclick='showMenu()'>menu</span><span id='title'>3. Circuits, AC Concepts, and
+Voltage Drop</span></h1>
 </header>
 <div id='menu'>
 <div class='menu-header'><span class='material-symbols-outlined menu-button' onclick='hideMenu()'>close</span><span id='book-title'><a href='toc.html'>PPWJS</a></span></div>
@@ -824,146 +824,325 @@ Script in Google Sheets</span></h1>
 <button class='nav' id='prior-button' onclick='navigate(&#39;prior&#39;)'><span class='material-symbols-outlined'>arrow_back</span></button>
 <button class='nav' id='next-button' onclick='navigate(&#39;next&#39;)'><span class='material-symbols-outlined'>arrow_forward</span></button>
               
-              <!--postBegin--><div class="module">monaco</div>
-<h1 data-number="3"
-id="getting-started-with-google-apps-script-in-google-sheets"><span
-class="header-section-number">3</span> Getting Started with Google Apps
-Script in Google Sheets</h1>
-<h2 data-number="3.1"
-id="welcome-to-google-sheets-as-a-programming-environment"><span
-class="header-section-number">3.1</span> Welcome to Google Sheets as a
-Programming Environment</h2>
-<p>A spreadsheet doesn&#8217;t look like a programming environment at first
-glance. It&#8217;s familiar and built for everyday tasks &#8212; budgets, lists,
-schedules. But under that grid lies a capable platform for applied
-programming, and it&#8217;s the most natural home for operations work. Paired
-with Apps Script, Sheets becomes a place where your code manipulates
-real operations data, automates repetitive work, and builds tools that
-feel useful right away.</p>
-<p>Before any of that, it&#8217;s worth naming what you&#8217;re actually modeling.
-Operations is the work of running a <em>process</em> &#8212; a repeatable
-sequence that turns inputs into outputs. Some processes are high-volume
-and standardized (a bottling line); others are low-volume and custom (a
-machine shop taking one-off jobs). Choosing how to set up a process for
-the kind of work it does is the heart of <strong>process
-strategy</strong>, and a spreadsheet is where you&#8217;ll represent that
-process: its steps, its capacity, the items moving through it. As you
-learn to script Sheets, keep that in mind &#8212; you&#8217;re not just storing
-numbers, you&#8217;re building a working model of an operation.</p>
-<h3 data-number="3.1.1"
-id="why-google-sheets-is-a-great-place-to-learn-applied-programming"><span
-class="header-section-number">3.1.1</span> Why Google Sheets Is a Great
-Place to Learn Applied Programming</h3>
-<p>Learning is easier when you can <em>see</em> your code&#8217;s results, and
-Sheets gives you that. Instead of abstract exercises, you work with
-concrete information &#8212; cells, tables, charts. When a script writes a
-value, formats a range, or reorganizes data, the change appears right in
-front of you. Sheets also supplies structure for free: you don&#8217;t have to
-design an interface or a data model from scratch, because the
-spreadsheet <em>is</em> both. That lets you focus on thinking like a
-programmer rather than wrestling with setup.</p>
-<h3 data-number="3.1.2"
-id="how-apps-script-extends-the-power-of-spreadsheets"><span
-class="header-section-number">3.1.2</span> How Apps Script Extends the
-Power of Spreadsheets</h3>
-<p>Apps Script is a JavaScript-based language that lives inside Google
-Workspace. With Sheets it lets you read and write cell values in code,
-loop through rows of data, create custom menus and buttons, automate
-formatting and calculations, and connect a sheet to Gmail, Drive,
-Calendar, and outside services. In short, it turns a spreadsheet into a
-programmable application &#8212; you&#8217;re no longer limited to formulas; you can
-write full scripts that run multi-step operations, respond to user
-actions, or run on a schedule.</p>
-<h3 data-number="3.1.3" id="what-you-can-build-inside-sheets"><span
-class="header-section-number">3.1.3</span> What You Can Build Inside
-Sheets</h3>
-<p>Once you combine JavaScript with spreadsheet data, the possibilities
-open up quickly. For operations work you might build:</p>
+              <!--postBegin--><h1 data-number="3" id="circuits-ac-concepts-and-voltage-drop"><span
+class="header-section-number">3</span> Circuits, AC Concepts, and
+Voltage Drop</h1>
+<p>Chapter 2 gave you Ohm&#8217;s law and power. This chapter puts those tools
+to work on the kinds of circuits electricians actually build &#8212; and on
+<strong>voltage drop</strong>, a dedicated scoring area on Utah&#8217;s
+Journeyman exam.</p>
+<h2 data-number="3.1" id="series-circuits-in-the-field"><span
+class="header-section-number">3.1</span> Series Circuits in the
+Field</h2>
+<p>True pure-series power wiring is uncommon for outlets (we parallel
+loads so each sees full voltage), but series thinking shows up
+everywhere:</p>
 <ul>
-<li><strong>Process and capacity tools</strong> that classify a process
-and compute its utilization</li>
-<li><strong>Productivity dashboards</strong> that summarize output per
-labor hour or per dollar</li>
-<li><strong>Inventory tools</strong> that flag items below their reorder
-point</li>
-<li><strong>Custom reports</strong> that generate summaries or charts
-with one click</li>
-<li><strong>Email automations</strong> that alert a buyer when stock
-runs low</li>
-<li><strong>Workflow systems</strong> that track tasks, approvals, or
-orders</li>
+<li>Voltage drops along a long feeder</li>
+<li>Multi-wire connections where improper neutrals create series
+surprises</li>
+<li>Troubleshoot: an open in a series string kills everything
+downstream</li>
 </ul>
-<p>These aren&#8217;t hypothetical &#8212; they&#8217;re the kinds of tools operations
-teams build every day to save time and cut errors.</p>
-<h3 data-number="3.1.4" id="what-this-chapter-will-accomplish"><span
-class="header-section-number">3.1.4</span> What This Chapter Will
-Accomplish</h3>
-<p>Before writing full scripts that read and modify spreadsheet data,
-we&#8217;ll take one important step: learning how <strong>variables and
-data</strong> work inside Apps Script. Even though Apps Script is a
-JavaScript variant, the core ideas &#8212; storing information, working with
-numbers and text, organizing data &#8212; are the same across every JavaScript
-platform you&#8217;ll meet later. In this chapter you&#8217;ll learn how variables
-work in Apps Script and why they matter, explore the basic data types,
-write and run simple scripts directly inside Sheets, and build
-confidence with the foundations every later script depends on.</p>
-<h2 data-number="3.2" id="opening-the-apps-script-editor"><span
-class="header-section-number">3.2</span> Opening the Apps Script
-Editor</h2>
-<p>Before writing code that touches a spreadsheet, you need to know
-where the code goes and how to reach the environment that runs it.
-Sheets makes this simple: every spreadsheet can have its own Apps Script
-project attached, and opening the editor takes only a few clicks.</p>
-<h3 data-number="3.2.1" id="creating-a-google-sheet"><span
-class="header-section-number">3.2.1</span> Creating a Google Sheet</h3>
-<p>Create a new spreadsheet by visiting
-<strong>https://sheets.new</strong> in your browser. For practice, give
-it an operations flavor &#8212; label a tab <code>Operations</code> and add a
-few columns like item, on-hand, reorder point. Once the sheet is open,
-you&#8217;re ready to reach the scripting tools behind it.</p>
-<h3 data-number="3.2.2" id="navigating-to-extensions-apps-script"><span
-class="header-section-number">3.2.2</span> Navigating to Extensions &#8594;
-Apps Script</h3>
-<p>In the menu bar at the top of Sheets, click
-<strong>Extensions</strong>, then select <strong>Apps Script</strong>. A
-new tab opens with the Apps Script editor &#8212; think of it as the backstage
-of your spreadsheet, where you write the code that controls the
-sheet.</p>
-<h3 data-number="3.2.3"
-id="understanding-the-apps-script-project-window"><span
-class="header-section-number">3.2.3</span> Understanding the Apps Script
-Project Window</h3>
-<p>The editor is a clean, browser-based development environment. It
-typically shows a <strong>file list</strong> on the left, a <strong>code
-editor</strong> in the center, a <strong>toolbar</strong> with run
-buttons and settings, and tabs for <strong>Executions</strong>,
-<strong>Triggers</strong>, and <strong>Services</strong>. Each
-spreadsheet gets its own Apps Script project by default, so the code you
-write here is linked directly to the sheet you opened.</p>
-<h3 data-number="3.2.4"
-id="the-code-editor-project-files-and-execution-log"><span
-class="header-section-number">3.2.4</span> The Code Editor, Project
-Files, and Execution Log</h3>
-<p>The <strong>code editor</strong> is where you write your functions.
-Apps Script starts you with a file called <code>Code.gs</code>; you can
-add more files as projects grow. Three parts matter most early on: the
-<strong>code editor</strong> itself, the <strong>project files</strong>
-that organize your scripts, and the <strong>execution log</strong>,
-which shows the history of your runs &#8212; including runtime and any errors.
-The log is especially helpful while learning: it tells you whether a
-script ran and gives details when something goes wrong.</p>
-<h3 data-number="3.2.5"
-id="where-your-code-lives-and-how-it-connects-to-the-spreadsheet"><span
-class="header-section-number">3.2.5</span> Where Your Code &#8220;Lives&#8221; and
-How It Connects to the Spreadsheet</h3>
-<p>Every Apps Script project is attached to a specific sheet. That means
-your code can read and write cell values, change formatting, create or
-delete sheets, add custom menus, and run automatically when the sheet
-opens or changes. Behind the scenes, Apps Script reaches the spreadsheet
-through the <code>SpreadsheetApp</code> service &#8212; you&#8217;ll use it soon.
-For now it&#8217;s enough to know your code is tightly connected to the sheet
-you opened. Next, we&#8217;ll explore variables and data: the building blocks
-of your first real, spreadsheet-powered operations scripts.</p>
+<p>Rules to keep sharp:</p>
+<ul>
+<li>Current is the same at every point in a series loop.</li>
+<li>Voltages add to the source.</li>
+<li>An open anywhere stops all current.</li>
+</ul>
+<h2 data-number="3.2" id="parallel-circuits-in-the-field"><span
+class="header-section-number">3.2</span> Parallel Circuits in the
+Field</h2>
+<p>Branch-circuit loads are almost always in parallel across the same
+voltage.</p>
+<p>Rules:</p>
+<ul>
+<li>Voltage is (ideally) the same across each branch.</li>
+<li>Currents add to the total.</li>
+<li>Opening one branch does not stop the others.</li>
+<li>Adding more loads <strong>decreases</strong> total resistance and
+<strong>increases</strong> total current.</li>
+</ul>
+<p><strong>Example.</strong> On a 120 V circuit, three loads draw 2 A, 3
+A, and 5 A.</p>
+<p>[ I_T = 10&#160;A,R_{eq} = = 12&#160; ]</p>
+<h2 data-number="3.3" id="multiwire-branch-circuits"><span
+class="header-section-number">3.3</span> Multiwire Branch Circuits</h2>
+<p>A common residential/commercial arrangement uses two ungrounded
+(&#8220;hot&#8221;) conductors with opposite legs / phases and a shared
+<strong>neutral</strong> (grounded conductor).</p>
+<p>On a 120/240 V single-phase system:</p>
+<ul>
+<li>Each hot to neutral is 120 V.</li>
+<li>Hot to hot is 240 V.</li>
+<li>Neutral carries the <strong>difference</strong> of the two hot
+currents when the hots are on opposite legs.</li>
+</ul>
+<p>If both hots are on the same leg (miswired), the neutral can carry
+the <strong>sum</strong> &#8212; a serious overload risk. Handle-tied or
+common-trip breakers, correct phasing, and identifying neutrals
+matter.</p>
+<p>Exam theme: neutrals are current-carrying conductors in normal
+operation. Do not confuse them with equipment grounding conductors.</p>
+<h2 data-number="3.4" id="introduction-to-ac-waveforms"><span
+class="header-section-number">3.4</span> Introduction to AC
+Waveforms</h2>
+<p>AC voltage and current vary with time, typically as a sine wave at
+<strong>60 Hz</strong> in the U.S.</p>
+<p>Important values:</p>
+<ul>
+<li><strong>Peak</strong> &#8212; maximum instantaneous value</li>
+<li><strong>Peak-to-peak</strong> &#8212; from positive peak to negative
+peak</li>
+<li><strong>RMS (root mean square)</strong> &#8212; the effective value that
+produces the same heating in a resistor as a DC value of that
+magnitude</li>
+</ul>
+<p>For a sine wave:</p>
+<p>[ E_{RMS} = 0.707 E_{peak} ]</p>
+<p>[ E_{peak} = 1.414 E_{RMS} ]</p>
+<p>When someone says &#8220;120 volts,&#8221; they almost always mean <strong>120 V
+RMS</strong>. Meters used for power work display RMS for sine waves
+(true-RMS meters needed for distorted waveforms).</p>
+<h2 data-number="3.5"
+id="frequency-period-and-wavelength-light-touch"><span
+class="header-section-number">3.5</span> Frequency, Period, and
+Wavelength (Light Touch)</h2>
+<p>[ f = ]</p>
+<p>At 60 Hz, the period (T) is 1/60 second. You rarely calculate this on
+the electrician exam, but transformers, motors, and capacitive/inductive
+behavior all assume the system frequency.</p>
+<h2 data-number="3.6" id="resistance-inductance-and-capacitance"><span
+class="header-section-number">3.6</span> Resistance, Inductance, and
+Capacitance</h2>
+<p>Real AC circuits contain more than resistance.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Property</th>
+<th>Symbol</th>
+<th>Opposes / stores</th>
+<th>Phase note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resistance</td>
+<td>(R)</td>
+<td>Dissipates energy as heat</td>
+<td>V and I in phase</td>
+</tr>
+<tr>
+<td>Inductance</td>
+<td>(L) (henry)</td>
+<td>Opposes change in current</td>
+<td>Current lags voltage</td>
+</tr>
+<tr>
+<td>Capacitance</td>
+<td>(C) (farad)</td>
+<td>Opposes change in voltage</td>
+<td>Current leads voltage</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Inductive reactance:</strong></p>
+<p>[ X_L = 2f L ]</p>
+<p><strong>Capacitive reactance:</strong></p>
+<p>[ X_C = ]</p>
+<p><strong>Impedance</strong> (Z) is the AC equivalent of resistance for
+Ohm&#8217;s law:</p>
+<p>[ E = I Z ]</p>
+<p>For a series R&#8211;L&#8211;C type relationship (magnitudes):</p>
+<p>[ Z = ]</p>
+<h3 data-number="3.6.1" id="power-factor"><span
+class="header-section-number">3.6.1</span> Power factor</h3>
+<p>[ PF = = = ]</p>
+<ul>
+<li>Purely resistive: PF = 1</li>
+<li>Motors (inductive): PF lagging, often 0.7&#8211;0.9 unloaded vs loaded
+varies</li>
+<li>Utility and large facilities care about PF; exam questions may ask
+you to find true power from VA and PF</li>
+</ul>
+<p><strong>Example.</strong> A load draws 10 A at 240 V. Metered true
+power is 1920 W.</p>
+<p>[ VA = 240 = 2400,PF = 1920/2400 = 0.8 ]</p>
+<h2 data-number="3.7" id="transformers-theory-you-need"><span
+class="header-section-number">3.7</span> Transformers (Theory You
+Need)</h2>
+<p>Transformers change AC voltage using magnetic coupling. Ideal
+approximate relationships:</p>
+<p>[ = = ]</p>
+<p>Power in &#8776; power out (ignoring losses):</p>
+<p>[ E_P I_P E_S I_S ]</p>
+<p><strong>Example.</strong> 480 V primary, 120 V secondary, secondary
+load 10 A. Approximate primary current:</p>
+<p>[ I_P = 2.5&#160;A ]</p>
+<p>Utah&#8217;s practical exam includes <strong>transformer
+termination</strong> for unlimited electrician candidates &#8212; matching
+conductors to correct points on a Delta-Wye transformer. Theory here
+supports that hands-on task: know high/low voltage sides, neutral/X0
+where applicable, and that wrong landing points create dangerous
+voltages.</p>
+<h3 data-number="3.7.1" id="separately-derived-systems"><span
+class="header-section-number">3.7.1</span> Separately derived
+systems</h3>
+<p>A transformer with no direct electrical connection between primary
+and secondary is a classic <strong>separately derived system</strong>.
+It needs its own grounding/bonding treatment under Article 250 &#8212;
+foreshadowing Chapter 6.</p>
+<h2 data-number="3.8" id="voltage-drop-why-it-matters"><span
+class="header-section-number">3.8</span> Voltage Drop: Why It
+Matters</h2>
+<p>Voltage drop is the reduction in voltage from source to load caused
+by conductor resistance (and, more completely, impedance). Excessive
+drop causes:</p>
+<ul>
+<li>Dim lights</li>
+<li>Motors that overheat or fail to start</li>
+<li>Nuisance issues on electronics</li>
+<li>Customers who blame &#8220;bad power&#8221; when the feeder is simply undersized
+or too long</li>
+</ul>
+<p>The NEC <strong>informational notes</strong> recommend (not always a
+mandatory &#8220;shall&#8221;) limiting drop to roughly:</p>
+<ul>
+<li><strong>3%</strong> on branch circuits or feeders individually in
+many notes</li>
+<li><strong>5%</strong> total (feeder + branch) as a common design
+target</li>
+</ul>
+<p>Exam questions may ask you to <strong>calculate</strong> drop, or to
+size wire so drop stays under a stated percentage. Read carefully
+whether the question uses one-way length or round-trip.</p>
+<h2 data-number="3.9" id="voltage-drop-formulas"><span
+class="header-section-number">3.9</span> Voltage Drop Formulas</h2>
+<h3 data-number="3.9.1" id="single-phase-most-common-exam-form"><span
+class="header-section-number">3.9.1</span> Single-phase (most common
+exam form)</h3>
+<p>[ VD = ]</p>
+<p>Where:</p>
+<ul>
+<li>(VD) = voltage drop (volts)</li>
+<li>(K) = direct-current resistance constant (copper &#8776; 12.9, aluminum &#8776;
+21.2 in many Ugly&#8217;s/exam sheets &#8212; use the value the problem or your
+allowed reference specifies)</li>
+<li>(I) = current in amperes</li>
+<li>(D) = one-way distance in feet</li>
+<li>(CM) = circular mil area of the conductor</li>
+<li>The <strong>2</strong> accounts for the outgoing and return
+conductors</li>
+</ul>
+<h3 data-number="3.9.2" id="three-phase"><span
+class="header-section-number">3.9.2</span> Three-phase</h3>
+<p>[ VD = ]</p>
+<p>(Uses () instead of 2 for balanced three-phase line conductors.)</p>
+<h3 data-number="3.9.3" id="percent-voltage-drop"><span
+class="header-section-number">3.9.3</span> Percent voltage drop</h3>
+<p>[ %VD = ]</p>
+<h3 data-number="3.9.4"
+id="finding-required-cm-for-a-maximum-drop"><span
+class="header-section-number">3.9.4</span> Finding required CM for a
+maximum drop</h3>
+<p>Rearrange single-phase:</p>
+<p>[ CM = ]</p>
+<p>Then choose the next larger standard conductor size from NEC Chapter
+9 Table 8 (or Ugly&#8217;s).</p>
+<h2 data-number="3.10" id="worked-voltage-drop-problems"><span
+class="header-section-number">3.10</span> Worked Voltage Drop
+Problems</h2>
+<p><strong>Problem A.</strong> A 120 V single-phase branch circuit
+supplies 16 A. One-way length is 90 ft. Conductor is 12 AWG copper (6530
+cmil). Use (K = 12.9).</p>
+<p>[ VD = &#160;V ]</p>
+<p>[ %VD = % ]</p>
+<p>That exceeds a 3% branch-circuit design target &#8212; you might upsize the
+wire.</p>
+<p><strong>Problem B.</strong> Same load and length, but 10 AWG copper
+(10380 cmil):</p>
+<p>[ VD = &#160;V % ]</p>
+<p><strong>Problem C.</strong> 208 V three-phase feeder, 40 A, 200 ft
+one-way, 1 AWG copper (83690 cmil), (K = 12.9):</p>
+<p>[ VD = &#160;V ]</p>
+<p>[ %VD = % ]</p>
+<p><strong>Problem D.</strong> What minimum CM is needed for 240 V
+single-phase, 30 A, 150 ft, max 3% drop, copper (K=12.9)?</p>
+<p>[ VD_{max} = 0.03 = 7.2&#160;V ]</p>
+<p>[ CM = = 16125&#160; ]</p>
+<p>6 AWG copper is 26240 cmil; 8 AWG is 16510 cmil &#8212; 8 AWG is just
+enough by this math (always confirm ampacity and termination temperature
+ratings too; voltage drop never overrides ampacity rules).</p>
+<h2 data-number="3.11" id="using-tables-instead-of-k"><span
+class="header-section-number">3.11</span> Using Tables Instead of
+(K)</h2>
+<p>Ugly&#8217;s and many exam prep sheets also provide <strong>voltage drop
+tables</strong> or ohms-per-1000-feet methods:</p>
+<p>[ VD = I R ]</p>
+<p>for single-phase, where (R) is ohms per 1000 ft from the conductor
+table at the appropriate temperature. Same idea, different packaging.
+Use whichever form matches the given data.</p>
+<h2 data-number="3.12"
+id="skin-effect-and-ac-resistance-awareness"><span
+class="header-section-number">3.12</span> Skin Effect and AC Resistance
+(Awareness)</h2>
+<p>At larger sizes and AC, effective resistance rises slightly versus DC
+(skin effect). Precision design may use AC impedance tables. For typical
+branch-circuit exam problems, the standard (K) method is what you will
+use.</p>
+<h2 data-number="3.13"
+id="troubleshooting-with-voltage-drop-thinking"><span
+class="header-section-number">3.13</span> Troubleshooting With Voltage
+Drop Thinking</h2>
+<p>If voltage at a panel is fine but voltage at a load is low:</p>
+<ol type="1">
+<li>Measure under load (drop appears when current flows).</li>
+<li>Check conductor size and length.</li>
+<li>Check for loose neutrals/hots (connection resistance adds drop and
+heat).</li>
+<li>Check shared neutrals and overloaded multiwire circuits.</li>
+<li>Check for undersized extension cords or temporary wiring.</li>
+</ol>
+<h2 data-number="3.14" id="practice-problems"><span
+class="header-section-number">3.14</span> Practice Problems</h2>
+<ol type="1">
+<li>Series: 10 Ω and 30 Ω on 120 V. Find current and voltage across the
+30 Ω resistor.</li>
+<li>Parallel: loads of 4 A and 12 A on 120 V. Find total current and
+equivalent resistance.</li>
+<li>A load is 1800 VA at 120 V, PF 0.75. Find current and true
+power.</li>
+<li>Single-phase VD: 20 A, 120 ft one-way, 10 AWG Cu (10380 cmil),
+(K=12.9), 120 V system. Find volts dropped and %VD.</li>
+<li>What CM is required for 3% max drop: 240 V, 50 A, 180 ft,
+single-phase copper, (K=12.9)?</li>
+<li>Transformer: 480 V to 240 V, secondary delivers 25 A. Approximate
+primary current (ignore losses).</li>
+</ol>
+<h3 data-number="3.14.1" id="answers"><span
+class="header-section-number">3.14.1</span> Answers</h3>
+<ol type="1">
+<li>(R_T=40) Ω, (I=3) A, (V_{30}=90) V.</li>
+<li>(I_T=16) A, (R_{eq}=7.5) Ω.</li>
+<li>(I = 1800/120 = 15) A; (P = 1800 = 1350) W.</li>
+<li>(VD = (2)/10380 ) V; (%VD %).</li>
+<li>(VD_{max}=7.2) V; (CM=(2)/7.2 = 32250) cmil &#8594; next standard size at
+least 4 AWG (41740 cmil) after checking ampacity.</li>
+<li>(I_P (240)/480 = 12.5) A.</li>
+</ol>
+<h2 data-number="3.15" id="looking-ahead"><span
+class="header-section-number">3.15</span> Looking Ahead</h2>
+<p>You can now quantify how wire size and length steal voltage from a
+load. Chapter 4 turns to the hardware itself: conductor types, ampacity,
+cables, raceways, and enclosures &#8212; the Code side of getting current from
+the panel to the load without cooking the insulation.</p>
+<hr />
 <!--postEnd-->
               </div>
 </div>
@@ -986,9 +1165,9 @@ of your first real, spreadsheet-powered operations scripts.</p>
 
 <script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/321148285-widgets.js"></script>
 <script type='text/javascript'>
-window['__wavt'] = 'AEUoTZqX6Vo9pxE_l5RvGccE6sNb:1784237237555';_WidgetManager._Init('//draft.blogger.com/rearrange?blogID\x3d9088886865899659654','//book1013.blogspot.com/2000/02/3.html','9088886865899659654');
-_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '9088886865899659654', 'title': 'book1013', 'url': 'https://book1013.blogspot.com/2000/02/3.html', 'canonicalUrl': 'https://book1013.blogspot.com/2000/02/3.html', 'homepageUrl': 'https://book1013.blogspot.com/', 'searchUrl': 'https://book1013.blogspot.com/search', 'canonicalHomepageUrl': 'https://book1013.blogspot.com/', 'blogspotFaviconUrl': 'https://book1013.blogspot.com/favicon.ico', 'bloggerUrl': 'https://draft.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22book1013 - RSS\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://draft.blogger.com/feeds/9088886865899659654/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/1605915101041460079/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': true, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/c5aecb47b31d09da', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '1605915101041460079', 'pageName': '3. Getting Started with Google Apps\nScript in Google Sheets', 'pageTitle': 'book1013: 3. Getting Started with Google Apps\nScript in Google Sheets'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': '3. Getting Started with Google Apps\nScript in Google Sheets', 'description': 'monaco  3  Getting Started with Google Apps\r Script in Google Sheets \r 3.1  Welcome to Google Sheets as a\r Programming Environment \r A sprea...', 'url': 'https://book1013.blogspot.com/2000/02/3.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 1605915101041460079}}]);
-_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'mainblogsec', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/3899201366-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/828616780-lightbox_bundle.css'}, 'displayModeFull'));
+window['__wavt'] = 'AEUoTZqwO1NsPGIJS0NALimDT4ua:1784270489011';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d9088886865899659654','//book1013.blogspot.com/2000/02/3.html','9088886865899659654');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '9088886865899659654', 'title': 'book1013', 'url': 'https://book1013.blogspot.com/2000/02/3.html', 'canonicalUrl': 'https://book1013.blogspot.com/2000/02/3.html', 'homepageUrl': 'https://book1013.blogspot.com/', 'searchUrl': 'https://book1013.blogspot.com/search', 'canonicalHomepageUrl': 'https://book1013.blogspot.com/', 'blogspotFaviconUrl': 'https://book1013.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22book1013 - RSS\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/9088886865899659654/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/1605915101041460079/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': true, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/0b901e5396ee8015', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '1605915101041460079', 'pageName': '3. Circuits, AC Concepts, and\nVoltage Drop', 'pageTitle': 'book1013: 3. Circuits, AC Concepts, and\nVoltage Drop'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': '3. Circuits, AC Concepts, and\nVoltage Drop', 'description': '3  Circuits, AC Concepts, and Voltage Drop  Chapter 2 gave you Ohm\u2019s law and power. This chapter puts those tools to work on the kinds of ci...', 'url': 'https://book1013.blogspot.com/2000/02/3.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 1605915101041460079}}]);
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'mainblogsec', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1434207229-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/828616780-lightbox_bundle.css'}, 'displayModeFull'));
 </script>
 </body>
 </html>

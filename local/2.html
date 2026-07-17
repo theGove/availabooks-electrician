@@ -782,7 +782,7 @@ right: .75rem;
     }    
 
   </script>
-<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=210ce249-8dea-4558-980a-5c1935544cb7' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=210ce249-8dea-4558-980a-5c1935544cb7' rel='stylesheet'/></noscript>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=52990b10-826a-4186-92b2-887cd56185a0' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=52990b10-826a-4186-92b2-887cd56185a0' rel='stylesheet'/></noscript>
 <meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
 <meta name='google-adsense-platform-domain' content='blogspot.com'/>
 
@@ -801,7 +801,8 @@ right: .75rem;
 <div class='hide' id='kind'>chapter</div>
 <div class='index-boxnbt'>
 <header class='entry-header'>
-<h1 class='post-title entry-title' itemprop='headline'><span class='material-symbols-outlined menu-button' onclick='showMenu()'>menu</span><span id='title'>2. Your First Lines of Code</span></h1>
+<h1 class='post-title entry-title' itemprop='headline'><span class='material-symbols-outlined menu-button' onclick='showMenu()'>menu</span><span id='title'>2. Voltage, Current, Resistance, and
+Power</span></h1>
 </header>
 <div id='menu'>
 <div class='menu-header'><span class='material-symbols-outlined menu-button' onclick='hideMenu()'>close</span><span id='book-title'><a href='toc.html'>PPWJS</a></span></div>
@@ -823,342 +824,325 @@ right: .75rem;
 <button class='nav' id='prior-button' onclick='navigate(&#39;prior&#39;)'><span class='material-symbols-outlined'>arrow_back</span></button>
 <button class='nav' id='next-button' onclick='navigate(&#39;next&#39;)'><span class='material-symbols-outlined'>arrow_forward</span></button>
               
-              <!--postBegin--><div class="module">monaco</div>
-<h1 data-number="2" id="your-first-lines-of-code"><span
-class="header-section-number">2</span> Your First Lines of Code</h1>
-<h2 data-number="2.1" id="writing-and-running-simple-statements"><span
-class="header-section-number">2.1</span> Writing and Running Simple
-Statements</h2>
-<p>Before you can build programs that make decisions or process data,
-you need to get comfortable with the most basic building block of all:
-the <strong>expression</strong>. An expression is any piece of code the
-computer evaluates to produce a value &#8212; a number, a piece of text, or a
-calculation. Think of expressions as the meaningful phrases that supply
-the data your code works with.</p>
-<p>In operations, the values you care about are usually measurements,
-and <strong>productivity</strong> &#8212; outputs divided by inputs &#8212; is one
-of the most important. We&#8217;ll compute it again and again in this chapter
-using two small operations you&#8217;ll get to know well. The first is a
-university that one year taught 18,000 students with 720 faculty, then
-grew to 26,000 students with 800 faculty five years later. The second is
-<strong>Performance Apparel</strong>, a custom t-shirt shop that makes
-1,000 shirts a month on $2,000 of labor, $3,000 of materials, and $1,500
-of overhead. Nearly every calculation ahead comes back to one of these
-two, so once you know them, the numbers will speak for themselves.</p>
-<p>Expressions are how you turn those situations into values:</p>
+              <!--postBegin--><h1 data-number="2" id="voltage-current-resistance-and-power"><span
+class="header-section-number">2</span> Voltage, Current, Resistance, and
+Power</h1>
+<p>Every calculation on the electrician exam starts here. If you can
+move confidently between volts, amps, ohms, and watts, you can solve a
+large share of theory questions without opening the NEC. Code comes
+later; this chapter is pure electrical sense.</p>
+<h2 data-number="2.1" id="voltage-electrical-pressure"><span
+class="header-section-number">2.1</span> Voltage: Electrical
+Pressure</h2>
+<p><strong>Voltage</strong> is the difference in electric potential
+between two points. It is the &#8220;pressure&#8221; that can push current through a
+circuit. The unit is the <strong>volt</strong> (V).</p>
+<p>Common voltages you will see in Utah work and on the exam:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>System</th>
+<th>Typical voltages</th>
+<th>Where you see it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residential single-phase</td>
+<td>120/240 V</td>
+<td>Homes, small shops</td>
+</tr>
+<tr>
+<td>Commercial three-phase</td>
+<td>120/208 V</td>
+<td>Many offices and retail</td>
+</tr>
+<tr>
+<td>Industrial three-phase</td>
+<td>277/480 V</td>
+<td>Large buildings, plants</td>
+</tr>
+<tr>
+<td>Control / signaling</td>
+<td>24 V, 120 V</td>
+<td>Controls, doorbells, some lighting controls</td>
+</tr>
+</tbody>
+</table>
+<h3 data-number="2.1.1"
+id="series-and-parallel-voltage-ideas-preview"><span
+class="header-section-number">2.1.1</span> Series and parallel voltage
+ideas (preview)</h3>
 <ul>
-<li>A plain number like <code>18000</code> (the students taught) is an
-expression.</li>
-<li>A calculation like <code>18000 / 720</code> (students per faculty
-member) is an expression that evaluates to <code>25</code>.</li>
-<li>A piece of text in quotes, like <code>"Performance Apparel"</code>,
-is an expression.</li>
+<li>In a <strong>series</strong> connection of voltage sources of the
+same polarity, voltages <strong>add</strong>.</li>
+<li>Across loads in <strong>parallel</strong>, each load sees the
+<strong>same</strong> voltage (ideally).</li>
+<li>Across loads in <strong>series</strong>, the source voltage
+<strong>divides</strong> among the loads in proportion to their
+resistances.</li>
 </ul>
-<p>Expressions represent values, but to <em>do</em> something with them
-you wrap them in <strong>statements</strong> &#8212; the full instructions
-that tell the computer to act.</p>
-<h3 data-number="2.1.1" id="from-value-to-action"><span
-class="header-section-number">2.1.1</span> From Value to Action</h3>
-<p>An expression on its own is like a thought you haven&#8217;t spoken. The
-calculation <code>18000 / 720</code> represents a single-factor
-productivity figure &#8212; students taught per faculty member &#8212; but writing
-it alone doesn&#8217;t tell the computer to do anything with it. To turn it
-into an instruction, use a statement such as
-<code>console.log()</code>:</p>
-<pre class="javascript-example"><code>console.log(18000 / 720) // statement: display the result
-                         // 18000 / 720 is just the expression</code></pre>
-<p>This tells the computer to print the result &#8212; 25 students per faculty
-member, the university&#8217;s productivity for that year. (When it grew to
-32.5 five years later, that was a real gain &#8212; we&#8217;ll measure exactly how
-much shortly.) One instruction, one action. Tiny as it is, this captures
-the essence of programming: write a clear command, and the computer
-carries it out exactly.</p>
-<h3 data-number="2.1.2" id="what-makes-a-statement-simple"><span
-class="header-section-number">2.1.2</span> What Makes a Statement
-&#8220;Simple&#8221;</h3>
-<p>A simple statement usually does one thing &#8212; display a value, assign a
-variable, or call a function. For example:</p>
-<pre class="javascript-example"><code>console.log(1000 / (2000 + 3000 + 1500))
-// multi-factor productivity: shirts produced per dollar of input,
-// dividing output by labor + materials + overhead</code></pre>
-<p>This calculates how many shirts Performance Apparel produces for
-every dollar of input &#8212; about 0.154 &#8212; and displays it. Or:</p>
-<pre class="javascript-example"><code>let studentsPerFaculty = 18000 / 720</code></pre>
-<p>This stores a result for later use without displaying it. Each line
-is a complete thought expressed in code.</p>
-<h3 data-number="2.1.3" id="running-your-first-statements"><span
-class="header-section-number">2.1.3</span> Running Your First
-Statements</h3>
-<p>The easiest place to start is the browser console. Open developer
-tools, switch to the Console tab, and type. (The console echoes
-expressions back to you, so bare expressions often show a result there
-too.)</p>
-<p>These first two lines are just expressions &#8212; on their own they don&#8217;t
-instruct the computer to do anything lasting:</p>
-<pre class="javascript-example"><code>18000 / 720</code></pre>
-<pre class="javascript-example"><code>&quot;Performance Apparel&quot;</code></pre>
-<p>This is a true, simple statement:</p>
-<pre class="javascript-example"><code>console.log(32.5 / 25 - 1) // change in productivity: a 30% improvement</code></pre>
-<p>Now compare these two lines:</p>
-<pre class="javascript-example"><code>let studentsPerFaculty = 25
-studentsPerFaculty</code></pre>
-<p>Line one is a statement &#8212; it assigns 25 to
-<code>studentsPerFaculty</code>. Line two is just an expression: the
-computer can see that the value is 25, but you haven&#8217;t told it what to
-do with that fact. Make line two a statement and the value gets
-used:</p>
-<pre class="javascript-example"><code>let studentsPerFaculty = 25
-console.log(studentsPerFaculty)</code></pre>
-<p>Each statement runs immediately, giving instant feedback. That
-write-run-observe loop is one of the best ways to learn.</p>
-<h3 data-number="2.1.4" id="ending-statements"><span
-class="header-section-number">2.1.4</span> Ending Statements</h3>
-<p>You&#8217;ll often see a semicolon (<code>;</code>) at the end of every
-line in online JavaScript. Modern JavaScript usually figures out where a
-statement ends from the line break on its own &#8212; a feature called
-Automatic Semicolon Insertion &#8212; so in this book we leave them off. Two
-reasons: it&#8217;s one less rule to track while you&#8217;re learning the logic,
-and the code reads cleaner. You may later work on projects where
-semicolons are the norm; for now we keep things simple.</p>
-<h3 data-number="2.1.5" id="why-simple-statements-matter"><span
-class="header-section-number">2.1.5</span> Why Simple Statements
-Matter</h3>
-<p>It&#8217;s tempting to rush to bigger programs, but simple statements are
-the foundation for everything else. Even a full productivity dashboard
-or scheduling tool is built from thousands of small, clear instructions
-like these. As the book goes on, you&#8217;ll combine them into functions,
-loops, and conditionals &#8212; but it all starts here: one line, one action,
-one step toward thinking like a programmer.</p>
-<h2 data-number="2.2" id="console.log-and-basic-output"><span
-class="header-section-number">2.2</span> <code>console.log()</code> and
-Basic Output</h2>
-<p>Before you can build anything meaningful, you need a way to
-<em>see</em> what your code is doing. That&#8217;s <code>console.log()</code>.
-It&#8217;s one of the simplest tools in the language and one you&#8217;ll use
-constantly. It sends a message to the console &#8212; a built-in panel where
-JavaScript can display information. Think of it as your program&#8217;s voice:
-whenever you want to check a value or confirm a calculation, you log
-it.</p>
-<pre class="javascript-example"><code>console.log(&quot;Students per faculty:&quot;, 18000 / 720)</code></pre>
-<h3 data-number="2.2.1" id="why-console.log-matters"><span
-class="header-section-number">2.2.1</span> Why
-<code>console.log()</code> Matters</h3>
-<p>Logging looks trivial but does a lot of work: it lets you see results
-(numbers, text, calculations), trace problems when something isn&#8217;t
-working, follow the order your code runs in, and &#8212; as a beginner &#8212; watch
-how JavaScript behaves. It&#8217;s not an exaggeration to call it one of the
-most important tools you&#8217;ll use while learning.</p>
-<h3 data-number="2.2.2" id="logging-different-kinds-of-values"><span
-class="header-section-number">2.2.2</span> Logging Different Kinds of
-Values</h3>
-<p>You can log almost anything:</p>
-<pre class="javascript-example"><code>console.log(18000)                  // numbers (students taught)
-console.log(&quot;Performance Apparel&quot;)  // strings (a company name)
-console.log(32.5 &gt; 25)              // booleans (did productivity rise?)
-console.log(18000 / 720)            // expressions (a productivity ratio)</code></pre>
-<p>Anything after <code>//</code> is a comment &#8212; ignored by Apps Script.
-Use comments to note what a line does, record your reasoning, or
-temporarily disable code you don&#8217;t want to run but don&#8217;t want to
-delete.</p>
-<p>You can also log several values at once:</p>
-<pre class="javascript-example"><code>console.log(&quot;Productivity:&quot;, 18000 / 720, &quot;students per faculty&quot;)</code></pre>
-<p>The console prints the label and the result together, which makes the
-output easy to read.</p>
-<h3 data-number="2.2.3" id="using-the-console-in-your-browser"><span
-class="header-section-number">2.2.3</span> Using the Console in Your
-Browser</h3>
-<p>To try it: open your browser, right-click and choose
-<strong>Inspect</strong> or <strong>Developer Tools</strong>, click the
-<strong>Console</strong> tab, type a line such as
-<code>console.log("Testing output")</code>, and press Enter. The message
-appears immediately &#8212; that instant feedback is one of the best ways to
-build confidence.</p>
-<h3 data-number="2.2.4" id="output-isnt-just-for-beginners"><span
-class="header-section-number">2.2.4</span> Output Isn&#8217;t Just for
-Beginners</h3>
-<p>Even experienced developers rely on logging &#8212; it&#8217;s a quick, flexible
-way to understand what code is doing without elaborate tools. You&#8217;ll
-learn more advanced techniques later, but <code>console.log()</code>
-will always stay in your toolkit. For now, treat it as your first and
-most reliable way to ask your program, &#8220;What&#8217;s going on here?&#8221;</p>
-<h2 data-number="2.3"
-id="understanding-errors-and-debugging-early"><span
-class="header-section-number">2.3</span> Understanding Errors and
-Debugging Early</h2>
-<p>Every programmer hits errors. Hitting one isn&#8217;t a sign you&#8217;re doing
-it wrong &#8212; it&#8217;s a sign you&#8217;re <em>programming</em>. An error is just the
-computer saying, &#8220;I tried to follow your instructions, but something
-didn&#8217;t make sense.&#8221; Learning to read these messages early makes you far
-more confident.</p>
-<h3 data-number="2.3.1" id="errors-are-part-of-the-process"><span
-class="header-section-number">2.3.1</span> Errors Are Part of the
-Process</h3>
-<p>You expect to stumble over grammar when learning any new language,
-and a programming language is no different. You&#8217;ll misspell a name, drop
-a parenthesis, or use a feature wrong. Treat errors as feedback &#8212; they
-point straight at what needs attention. A typical message looks
-like:</p>
-<pre class="javascript-example"><code>Uncaught ReferenceError: faculty is not defined</code></pre>
-<p>Intimidating at first, but with practice you&#8217;ll read these like
-clues.</p>
-<h3 data-number="2.3.2" id="types-of-errors-youll-see"><span
-class="header-section-number">2.3.2</span> Types of Errors You&#8217;ll
-See</h3>
-<p>Most beginner errors fall into a few buckets:</p>
+<p>Exam tip: if a question gives a 240 V source and two equal resistors
+in series, each resistor drops 120 V.</p>
+<h2 data-number="2.2" id="current-rate-of-flow"><span
+class="header-section-number">2.2</span> Current: Rate of Flow</h2>
+<p><strong>Current</strong> is the flow of electric charge. The unit is
+the <strong>ampere</strong> (A), often shortened to
+<strong>amp</strong>.</p>
+<p>Direction convention: conventional current is said to flow from
+positive to negative outside the source. Electron flow is the opposite.
+For almost all exam work, use conventional current and Kirchhoff&#8217;s laws
+without worrying about electron direction.</p>
+<h3 data-number="2.2.1" id="continuous-load-habit"><span
+class="header-section-number">2.2.1</span> Continuous load habit</h3>
+<p>The NEC often treats a load that runs for <strong>3 hours or
+more</strong> as a <strong>continuous load</strong>. Continuous loads
+are typically calculated at <strong>125%</strong> for branch-circuit and
+feeder sizing purposes. That 125% factor shows up constantly on exams &#8212;
+memorizing it early saves time later.</p>
+<h2 data-number="2.3" id="resistance-opposition-to-current"><span
+class="header-section-number">2.3</span> Resistance: Opposition to
+Current</h2>
+<p><strong>Resistance</strong> opposes current. The unit is the
+<strong>ohm</strong> (Ω).</p>
+<p>Factors that increase conductor resistance:</p>
 <ul>
-<li><strong>Syntax errors</strong> &#8212; the computer can&#8217;t parse what you
-wrote (a missing bracket, a stray character).</li>
-<li><strong>Reference errors</strong> &#8212; you used a name that doesn&#8217;t
-exist or isn&#8217;t spelled the way you think (writing <code>faculty</code>
-when you defined <code>facultyCount</code>).</li>
-<li><strong>Type errors</strong> &#8212; you tried an operation that doesn&#8217;t
-make sense, like calling something that isn&#8217;t a function.</li>
-<li><strong>Logic errors</strong> &#8212; the code runs but gives the wrong
-answer. These are the trickiest, because nothing complains. If your
-multi-factor productivity formula leaves off the parentheses around the
-summed inputs, you&#8217;ll still get a number &#8212; just a wildly wrong one,
-because the computer divides by only the first input and then adds the
-rest.</li>
+<li>Longer length</li>
+<li>Smaller cross-sectional area (higher AWG number for smaller
+wire)</li>
+<li>Higher resistivity material (aluminum higher than copper)</li>
+<li>Higher temperature (resistance of metal conductors rises with
+heat)</li>
 </ul>
-<p>Knowing which bucket you&#8217;re in narrows the fix.</p>
-<h3 data-number="2.3.3" id="reading-error-messages"><span
-class="header-section-number">2.3.3</span> Reading Error Messages</h3>
-<p>Messages feel cryptic until you know they usually tell you three
-things: what went wrong, where it happened (a line number), and why the
-computer couldn&#8217;t continue. For example:</p>
-<pre class="javascript-example"><code>Uncaught SyntaxError: Unexpected token &#39;}&#39;</code></pre>
-<p>This says the computer found a closing brace it didn&#8217;t expect &#8212;
-usually a sign something earlier is missing.</p>
-<h3 data-number="2.3.4" id="debugging-your-first-toolkit"><span
-class="header-section-number">2.3.4</span> Debugging: Your First
-Toolkit</h3>
-<p>Debugging is finding and fixing problems. Early on you&#8217;ll lean on a
-few simple, powerful habits: use <code>console.log()</code> to check
-values and confirm your code runs where you expect; read error messages
-slowly, one piece at a time; check for typos, especially in names;
-comment out sections to isolate the problem; and test small pieces
-before combining them. A classic catch is the productivity formula below
-&#8212; both lines run, but only one is right:</p>
-<pre class="javascript-example"><code>console.log(1000 / 2000 + 3000 + 1500)   // 4500.5 &#8212; wrong: no parentheses
-console.log(1000 / (2000 + 3000 + 1500)) // 0.154 &#8212; correct</code></pre>
-<p>These habits save hours.</p>
-<h3 data-number="2.3.5" id="debugging-builds-understanding"><span
-class="header-section-number">2.3.5</span> Debugging Builds
-Understanding</h3>
-<p>Fixing errors isn&#8217;t only about making code work &#8212; it&#8217;s how you learn.
-Each bug you track down deepens your sense of how JavaScript behaves,
-until you start anticipating problems before they happen. Debugging
-isn&#8217;t a chore; it&#8217;s one of the most valuable skills you&#8217;ll build.</p>
-<h2 data-number="2.4" id="the-idea-of-syntax-and-structure"><span
-class="header-section-number">2.4</span> The Idea of Syntax and
-Structure</h2>
-<p>Every language has rules for how words fit into meaningful sentences,
-and programming languages are no different. <strong>Syntax</strong> is
-the set of rules for writing code the computer can understand.
-<strong>Structure</strong> is how those rules fit together into a
-coherent program. If syntax is the grammar, structure is the
-organization.</p>
-<h3 data-number="2.4.1" id="why-syntax-matters"><span
-class="header-section-number">2.4.1</span> Why Syntax Matters</h3>
-<p>Computers are completely literal &#8212; no tone, no guessing, no filling
-in gaps. Forget a parenthesis or misspell a keyword and the machine
-stops and reports an error, because the instruction no longer fits the
-expected pattern. This is valid:</p>
-<pre class="javascript-example"><code>console.log(&quot;Productivity improved&quot;)</code></pre>
-<p>Remove one character and the computer no longer knows where the
-statement ends:</p>
-<pre class="javascript-example"><code>console.log(&quot;Productivity improved&quot;</code></pre>
-<p>A person might overlook the missing parenthesis; the computer can&#8217;t.
-Syntax rules create a predictable structure both you and the machine can
-rely on.</p>
-<h3 data-number="2.4.2"
-id="the-building-blocks-of-javascript-syntax"><span
-class="header-section-number">2.4.2</span> The Building Blocks of
-JavaScript Syntax</h3>
-<p>As you go, you&#8217;ll meet a handful of recurring elements:
-<strong>keywords</strong> like <code>let</code>, <code>if</code>,
-<code>function</code>; <strong>symbols</strong> like <code>{}</code>,
-<code>()</code>, <code>[]</code>; <strong>operators</strong> like
-<code>+</code>, <code>-</code>, <code>===</code>;
-<strong>comments</strong> with <code>//</code>; <strong>values</strong>
-like numbers, strings, and booleans; and <strong>identifiers</strong> &#8212;
-the names you choose for variables and functions. Each has a role and
-must appear in the right place.</p>
-<h3 data-number="2.4.3" id="structure-how-code-fits-together"><span
-class="header-section-number">2.4.3</span> Structure: How Code Fits
-Together</h3>
-<p>Where syntax governs the details, structure governs the big picture &#8212;
-organizing code so it&#8217;s readable and logical. JavaScript uses
-<strong>curly braces</strong> to group related statements:</p>
-<pre class="javascript-example"><code>if (newProductivity &gt; oldProductivity) {
-  console.log(&quot;Productivity improved&quot;)
-  console.log(&quot;Keep the new process&quot;)
-}</code></pre>
-<p>The braces show that both <code>console.log</code> lines belong to
-the <code>if</code>. Without them, only the first would depend on the
-condition; the second would run every time, regardless of whether
-productivity actually rose. The braces tell the computer to treat the
-grouped statements as one unit &#8212; they all run, or none do. Structure
-also includes indentation to show hierarchy, grouping related code,
-meaningful names, and a logical order.</p>
-<h3 data-number="2.4.4" id="syntax-structure-clear-communication"><span
-class="header-section-number">2.4.4</span> Syntax + Structure = Clear
-Communication</h3>
-<p>Programming is communication &#8212; expressing ideas in a form the
-computer can execute. Syntax keeps your message valid; structure keeps
-it understandable. A simple way to communicate clearly is to comment
-your code, especially the complicated parts. Explain what each section
-does and it&#8217;ll be far easier to follow when you return to it months
-later:</p>
-<pre class="javascript-example"><code>// Flag the change as an improvement worth keeping only when
-// the new productivity beats the old productivity.
-if (newProductivity &gt; oldProductivity) {
-  console.log(&quot;Productivity improved&quot;)
-  console.log(&quot;Keep the new process&quot;)
-}</code></pre>
-<h2 data-number="2.5"
-id="transitioning-to-google-apps-script-in-google-sheets"><span
-class="header-section-number">2.5</span> Transitioning to Google Apps
-Script in Google Sheets</h2>
-<p>So far you&#8217;ve learned JavaScript in its simplest form &#8212; small
-statements in the console. Now it&#8217;s time to take those skills somewhere
-practical, where your code interacts with real operations data. For the
-next part of the book we&#8217;ll shift to <strong>Google Apps
-Script</strong>, a JavaScript-based environment that runs inside Google
-Workspace, anchored in <strong>Google Sheets</strong> &#8212; where most
-operations data already lives.</p>
-<h3 data-number="2.5.1" id="why-move-to-google-apps-script-now"><span
-class="header-section-number">2.5.1</span> Why Move to Google Apps
-Script Now</h3>
-<p>Apps Script is the natural next step because it lets you apply your
-new skills to tasks that matter: computing productivity and other
-operations metrics, cleaning data, generating reports, and building
-tools that live right inside your spreadsheets. It&#8217;s ideal for beginners
-&#8212; nothing to install, code runs in the browser, results show up
-immediately in the sheet, the language is the JavaScript you&#8217;ve already
-learned, and you can build genuinely useful tools in just a few
-lines.</p>
-<h3 data-number="2.5.2" id="what-youll-learn-in-google-sheets"><span
-class="header-section-number">2.5.2</span> What You&#8217;ll Learn in Google
-Sheets</h3>
-<p>As we move into Apps Script, you&#8217;ll learn to write functions that
-read and modify spreadsheet data, create custom menus and buttons,
-automate repetitive tasks, build small applications inside Sheets, and
-connect a spreadsheet to other Google services. This is where
-programming starts to feel powerful &#8212; instead of writing code in
-isolation, you&#8217;ll be shaping tools that act on real operations
-information.</p>
-<h3 data-number="2.5.3" id="how-this-transition-works"><span
-class="header-section-number">2.5.3</span> How This Transition
-Works</h3>
-<p>You&#8217;re not leaving JavaScript behind &#8212; Apps Script <em>is</em>
-JavaScript, running in a different environment with extra features.
-Everything so far still applies; you&#8217;re just adding new abilities, like
-reading spreadsheet cells. Think of it as going from practicing chords
-to playing your first song: the fundamentals stay the same, but now you
-build something meaningful. The next chapter takes you into Sheets,
-shows you how to open the Apps Script editor, and helps you write your
-first script that touches real data.</p>
+<p><strong>Resistivity</strong> and <strong>circular mils</strong>
+appear in voltage-drop and conductor math. A <strong>circular
+mil</strong> (cmil) is the area of a circle 1 mil (0.001 inch) in
+diameter. Conductor areas in Chapter 9 of the NEC are listed in circular
+mils for larger sizes.</p>
+<p>Approximate resistance of copper and aluminum per 1000 feet at a
+given temperature is tabulated in Ugly&#8217;s and NEC Chapter 9 Table 8. On
+the exam, prefer the table over memorizing exotic constants &#8212; but know
+the relationships:</p>
+<p>[ R = ]</p>
+<p>Where:</p>
+<ul>
+<li>(R) = resistance in ohms (one-way conductor, depending on how (L) is
+defined &#8212; see voltage drop chapter)</li>
+<li>(K) = resistivity constant (often ~12.9 for copper, ~21.2 for
+aluminum in ohm-cmil/ft at common exam temperatures &#8212; confirm with your
+reference for the exact problem)</li>
+<li>(L) = length in feet</li>
+<li>(CM) = circular mil area</li>
+</ul>
+<h2 data-number="2.4" id="ohms-law"><span
+class="header-section-number">2.4</span> Ohm&#8217;s Law</h2>
+<p>For DC circuits and AC resistive circuits:</p>
+<p>[ E = I R ]</p>
+<p>Or rearranged:</p>
+<p>[ I = R = ]</p>
+<p>Electricians often use <strong>E</strong> for voltage (electromotive
+force), <strong>I</strong> for current (intensity), and
+<strong>R</strong> for resistance.</p>
+<h3 data-number="2.4.1" id="worked-examples"><span
+class="header-section-number">2.4.1</span> Worked examples</h3>
+<p><strong>Example 1.</strong> A heating element draws 10 A from 120 V.
+What is its resistance?</p>
+<p>[ R = = 12&#160; ]</p>
+<p><strong>Example 2.</strong> A 24 Ω resistor is connected across 240
+V. Find the current.</p>
+<p>[ I = = 10&#160;A ]</p>
+<p><strong>Example 3.</strong> A circuit with 8 Ω resistance carries 15
+A. What voltage is across it?</p>
+<p>[ E = 15 = 120&#160;V ]</p>
+<h3 data-number="2.4.2" id="series-resistances"><span
+class="header-section-number">2.4.2</span> Series resistances</h3>
+<p>Resistances in series add:</p>
+<p>[ R_T = R_1 + R_2 + R_3 + ]</p>
+<p>Current is the same through each series resistor. Voltage drops
+divide proportional to resistance.</p>
+<p><strong>Example.</strong> Three resistors &#8212; 4 Ω, 6 Ω, and 10 Ω &#8212; in
+series on 120 V.</p>
+<p>[ R_T = 20&#160;,I = = 6&#160;A ]</p>
+<p>Drops: (V_4 = 24) V, (V_6 = 36) V, (V_{10} = 60) V. Sum = 120 V.</p>
+<h3 data-number="2.4.3" id="parallel-resistances"><span
+class="header-section-number">2.4.3</span> Parallel resistances</h3>
+<p>For two resistors:</p>
+<p>[ R_T = ]</p>
+<p>For equal resistors of value (R), (n) in parallel:</p>
+<p>[ R_T = ]</p>
+<p>For any number of parallels, a reliable method is conductance:</p>
+<p>[ = + + + ]</p>
+<p>Voltage across each parallel branch is the same. Currents divide
+inversely with resistance (more current through the smaller
+resistance).</p>
+<p><strong>Example.</strong> 6 Ω and 3 Ω in parallel on 120 V.</p>
+<p>[ R_T = = 2&#160;,I_T = = 60&#160;A ]</p>
+<p>Branch currents: (I_6 = 20) A, (I_3 = 40) A.</p>
+<h3 data-number="2.4.4" id="combination-circuits"><span
+class="header-section-number">2.4.4</span> Combination circuits</h3>
+<p>Reduce parallel groups to equivalents, then combine series strings,
+step by step. Exam questions love one parallel pair in series with
+another resistor.</p>
+<h2 data-number="2.5" id="power"><span
+class="header-section-number">2.5</span> Power</h2>
+<p><strong>Power</strong> is the rate of energy transfer. Unit:
+<strong>watt</strong> (W). Larger loads use <strong>kilowatts</strong>
+(kW).</p>
+<p>Core formulas (resistive / DC / unity power factor):</p>
+<p>[ P = E I ]</p>
+<p>[ P = I^2 R ]</p>
+<p>[ P = ]</p>
+<p><strong>Example.</strong> 120 V circuit draws 12 A into a resistive
+heater.</p>
+<p>[ P = 120 = 1440&#160;W = 1.44&#160;kW ]</p>
+<h3 data-number="2.5.1"
+id="energy-and-cost-occasional-exam-flavor"><span
+class="header-section-number">2.5.1</span> Energy and cost (occasional
+exam flavor)</h3>
+<p>Energy in watt-hours or kilowatt-hours:</p>
+<p>[ = ]</p>
+<p>If power costs $0.12/kWh, a 1500 W heater running 4 hours costs:</p>
+<p>[ = $0.72 ]</p>
+<h2 data-number="2.6" id="single-phase-and-three-phase-power"><span
+class="header-section-number">2.6</span> Single-Phase and Three-Phase
+Power</h2>
+<h3 data-number="2.6.1" id="single-phase"><span
+class="header-section-number">2.6.1</span> Single-phase</h3>
+<p>[ P = E I PF ]</p>
+<p>Where <strong>PF</strong> is power factor (1.0 for purely resistive
+loads). Many exam heater/lighting problems assume PF = 1.</p>
+<p>Apparent power in volt-amperes:</p>
+<p>[ VA = E I ]</p>
+<h3 data-number="2.6.2" id="three-phase"><span
+class="header-section-number">2.6.2</span> Three-phase</h3>
+<p>For balanced three-phase:</p>
+<p>[ P = E_{L} I_{L} PF ]</p>
+<p>[ VA = E_{L} I_{L} ]</p>
+<p>Where (E_L) and (I_L) are <strong>line</strong> voltage and
+<strong>line</strong> current. ( ).</p>
+<p><strong>Example.</strong> A balanced three-phase load draws 20 A per
+phase on a 208 V system at PF 0.9.</p>
+<p>[ P = 208 &#160;W ]</p>
+<p>[ VA = 208 &#160;VA ]</p>
+<h3 data-number="2.6.3"
+id="finding-current-from-power-common-exam-move"><span
+class="header-section-number">2.6.3</span> Finding current from power
+(common exam move)</h3>
+<p>Single-phase:</p>
+<p>[ I = ]</p>
+<p>Three-phase:</p>
+<p>[ I = ]</p>
+<p><strong>Example.</strong> 10 kW single-phase resistive load on 240
+V:</p>
+<p>[ I = = 41.7&#160;A ]</p>
+<h2 data-number="2.7"
+id="horsepower-and-motors-bridge-to-chapter-8"><span
+class="header-section-number">2.7</span> Horsepower and Motors (Bridge
+to Chapter 8)</h2>
+<p>Motors are often rated in <strong>horsepower</strong> (hp). Rough
+conversion:</p>
+<p>[ 1&#160; = 746&#160;W ]</p>
+<p>That is input mechanical output rating &#8212; actual electrical input is
+higher because motors are not 100% efficient. For exam conductor and
+OCPD sizing, you usually use <strong>NEC tables for full-load current
+(FLC)</strong> based on horsepower and voltage, not a homemade watt
+calculation. Learn the idea now; apply the tables in Chapter 8.</p>
+<h2 data-number="2.8" id="heat-why-i2r-matters"><span
+class="header-section-number">2.8</span> Heat: Why (I^2R) Matters</h2>
+<p>Power lost as heat in a conductor is (I^2R). Doubling current
+<strong>quadruples</strong> heating in the same resistance. That is why
+ampacity, terminations, and torque matter. A loose lug raises resistance
+at the connection; heat concentrates there and can start a fire long
+before the breaker trips on a modest load.</p>
+<h2 data-number="2.9" id="kirchhoffs-laws-exam-ready-version"><span
+class="header-section-number">2.9</span> Kirchhoff&#8217;s Laws (Exam-Ready
+Version)</h2>
+<p><strong>Kirchhoff&#8217;s Current Law (KCL):</strong> The algebraic sum of
+currents into a node is zero. What goes in must come out.</p>
+<p><strong>Kirchhoff&#8217;s Voltage Law (KVL):</strong> The algebraic sum of
+voltages around a closed loop is zero. Source voltages equal the sum of
+drops.</p>
+<p>You may not see those names on the test, but series/parallel
+problem-solving uses them constantly.</p>
+<h2 data-number="2.10" id="quick-reference-card"><span
+class="header-section-number">2.10</span> Quick Reference Card</h2>
+<table>
+<thead>
+<tr>
+<th>Relationship</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ohm&#8217;s law</td>
+<td>(E = IR)</td>
+</tr>
+<tr>
+<td>Power</td>
+<td>(P = EI = I^2R = E^2/R)</td>
+</tr>
+<tr>
+<td>Series R</td>
+<td>(R_T = R_1+R_2+)</td>
+</tr>
+<tr>
+<td>Two parallel R</td>
+<td>(R_T = (R_1 R_2)/(R_1+R_2))</td>
+</tr>
+<tr>
+<td>1φ current</td>
+<td>(I = P/(EPF))</td>
+</tr>
+<tr>
+<td>3φ power</td>
+<td>(P = E I , PF)</td>
+</tr>
+<tr>
+<td>3φ current</td>
+<td>(I = P/(E,PF))</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="2.11" id="practice-problems"><span
+class="header-section-number">2.11</span> Practice Problems</h2>
+<ol type="1">
+<li>A 480 Ω resistor is connected to 120 V. Find current and power.</li>
+<li>Two 100 Ω resistors are in parallel across 240 V. Find total
+resistance, total current, and power in each resistor.</li>
+<li>A 5 kW, 240 V single-phase heater (PF = 1). Find current. If
+continuous, what is 125% of that current?</li>
+<li>Resistances 2 Ω, 3 Ω, and 6 Ω are in parallel. Find (R_T).</li>
+<li>A balanced 3-phase load is 30 kW at 480 V, PF 0.85. Find line
+current.</li>
+<li>Copper conductor idea check: if length doubles and all else stays
+equal, what happens to resistance? To (I^2R) heating at the same
+current?</li>
+</ol>
+<h3 data-number="2.11.1" id="answers"><span
+class="header-section-number">2.11.1</span> Answers</h3>
+<ol type="1">
+<li>(I = 120/480 = 0.25) A. (P = 120 = 30) W (or (I^2R = 0.0625 = 30)
+W).</li>
+<li>(R_T = 50) Ω. (I_T = 240/50 = 4.8) A. Each resistor sees 240 V, so
+each dissipates (240^2/100 = 576) W.</li>
+<li>(I = 5000/240 = 20.83) A. Continuous 125%: (26.04) A.</li>
+<li>(1/R_T = 1/2 + 1/3 + 1/6 = 1), so (R_T = 1) Ω.</li>
+<li>(I = 30000/(480) ) A.</li>
+<li>Resistance doubles. Heating doubles (same (I), double (R)).</li>
+</ol>
+<h2 data-number="2.12" id="looking-ahead"><span
+class="header-section-number">2.12</span> Looking Ahead</h2>
+<p>Chapter 3 applies these tools to real circuits: how series and
+parallel behave under load, what AC adds beyond pure resistance, and how
+to calculate <strong>voltage drop</strong> &#8212; one of the heavier theory
+bands on the Utah Journeyman exam.</p>
+<hr />
 <!--postEnd-->
               </div>
 </div>
@@ -1181,8 +1165,8 @@ first script that touches real data.</p>
 
 <script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/321148285-widgets.js"></script>
 <script type='text/javascript'>
-window['__wavt'] = 'AEUoTZqY1Whz03--sqqTFIkB6G5k:1784236429630';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d9088886865899659654','//book1013.blogspot.com/2000/02/2.html','9088886865899659654');
-_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '9088886865899659654', 'title': 'book1013', 'url': 'https://book1013.blogspot.com/2000/02/2.html', 'canonicalUrl': 'https://book1013.blogspot.com/2000/02/2.html', 'homepageUrl': 'https://book1013.blogspot.com/', 'searchUrl': 'https://book1013.blogspot.com/search', 'canonicalHomepageUrl': 'https://book1013.blogspot.com/', 'blogspotFaviconUrl': 'https://book1013.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22book1013 - RSS\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/9088886865899659654/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/4441266847875795432/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': true, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/c5aecb47b31d09da', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '4441266847875795432', 'pageName': '2. Your First Lines of Code', 'pageTitle': 'book1013: 2. Your First Lines of Code'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': '2. Your First Lines of Code', 'description': 'monaco  2  Your First Lines of Code \r 2.1  Writing and Running Simple\r Statements \r Before you can build programs that make decisions or pro...', 'url': 'https://book1013.blogspot.com/2000/02/2.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 4441266847875795432}}]);
+window['__wavt'] = 'AEUoTZoy7OFsDYKfPZiagkHIeBlZ:1784270488674';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d9088886865899659654','//book1013.blogspot.com/2000/02/2.html','9088886865899659654');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '9088886865899659654', 'title': 'book1013', 'url': 'https://book1013.blogspot.com/2000/02/2.html', 'canonicalUrl': 'https://book1013.blogspot.com/2000/02/2.html', 'homepageUrl': 'https://book1013.blogspot.com/', 'searchUrl': 'https://book1013.blogspot.com/search', 'canonicalHomepageUrl': 'https://book1013.blogspot.com/', 'blogspotFaviconUrl': 'https://book1013.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22book1013 - RSS\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/9088886865899659654/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/4441266847875795432/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': true, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/0b901e5396ee8015', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '4441266847875795432', 'pageName': '2. Voltage, Current, Resistance, and\nPower', 'pageTitle': 'book1013: 2. Voltage, Current, Resistance, and\nPower'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': '2. Voltage, Current, Resistance, and\nPower', 'description': '2  Voltage, Current, Resistance, and Power  Every calculation on the electrician exam starts here. If you can move confidently between volts...', 'url': 'https://book1013.blogspot.com/2000/02/2.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 4441266847875795432}}]);
 _WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'mainblogsec', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1434207229-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/828616780-lightbox_bundle.css'}, 'displayModeFull'));
 </script>
 </body>

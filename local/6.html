@@ -782,7 +782,7 @@ right: .75rem;
     }    
 
   </script>
-<link href='https://draft.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=210ce249-8dea-4558-980a-5c1935544cb7' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://draft.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=210ce249-8dea-4558-980a-5c1935544cb7' rel='stylesheet'/></noscript>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=52990b10-826a-4186-92b2-887cd56185a0' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=52990b10-826a-4186-92b2-887cd56185a0' rel='stylesheet'/></noscript>
 <meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
 <meta name='google-adsense-platform-domain' content='blogspot.com'/>
 
@@ -801,7 +801,7 @@ right: .75rem;
 <div class='hide' id='kind'>chapter</div>
 <div class='index-boxnbt'>
 <header class='entry-header'>
-<h1 class='post-title entry-title' itemprop='headline'><span class='material-symbols-outlined menu-button' onclick='showMenu()'>menu</span><span id='title'>6. Arrays</span></h1>
+<h1 class='post-title entry-title' itemprop='headline'><span class='material-symbols-outlined menu-button' onclick='showMenu()'>menu</span><span id='title'>6. Grounding and Bonding</span></h1>
 </header>
 <div id='menu'>
 <div class='menu-header'><span class='material-symbols-outlined menu-button' onclick='hideMenu()'>close</span><span id='book-title'><a href='toc.html'>PPWJS</a></span></div>
@@ -823,371 +823,314 @@ right: .75rem;
 <button class='nav' id='prior-button' onclick='navigate(&#39;prior&#39;)'><span class='material-symbols-outlined'>arrow_back</span></button>
 <button class='nav' id='next-button' onclick='navigate(&#39;next&#39;)'><span class='material-symbols-outlined'>arrow_forward</span></button>
               
-              <!--postBegin--><div class="module">monaco</div>
-<h1 data-number="6" id="arrays"><span
-class="header-section-number">6</span> Arrays</h1>
-<h2 data-number="6.1" id="why-arrays-matter-in-apps-script"><span
-class="header-section-number">6.1</span> Why Arrays Matter in Apps
-Script</h2>
-<p>When you start automating Google Sheets with Apps Script, you quickly
-discover that working with <strong>one value at a time</strong> isn&#8217;t
-enough. Spreadsheets are built around <strong>lists</strong>,
-<strong>columns</strong>, and <strong>tables</strong> &#8212; all collections
-of values. To handle that kind of data, you need a structure that can
-hold many items at once. That&#8217;s exactly what arrays are designed
-for.</p>
-<p>This is where the University Store&#8217;s data outgrows single variables.
-Two collections will run through the chapter. The first is the clicker&#8217;s
-demand history &#8212; how many sold each month over the past year:</p>
-<pre class="javascript-example"><code>let monthlyDemand = [480, 240, 180, 300, 360, 120, 90, 540, 420, 240, 180, 450]</code></pre>
-<p>Those twelve numbers add up to the 3,600-a-year figure from Chapter
-4, but notice how they swing: a quiet summer (90 in July), then sharp
-spikes when each semester starts (540 in August, 480 in January). That
-movement is exactly why last month&#8217;s sales are a poor guide to next
-month&#8217;s &#8212; and why, in the next chapter, we&#8217;ll forecast from the whole
-series instead of any single point. The second collection is a slice of
-the store&#8217;s catalog, where each item is a row of its own values:</p>
-<pre class="javascript-example"><code>let catalog = [
-  [&quot;classroom clicker&quot;, 120, 64800],
-  [&quot;whiteboard marker&quot;, 480, 9000],
-  [&quot;USB drive&quot;, 75, 42000]
-]</code></pre>
-<p>Arrays let your scripts read, process, and transform groups of values
-like these efficiently. They&#8217;re the backbone of almost every meaningful
-spreadsheet automation you&#8217;ll write.</p>
-<h3 data-number="6.1.1"
-id="arrays-hold-multiple-values-in-a-single-variable"><span
-class="header-section-number">6.1.1</span> Arrays Hold Multiple Values
-in a Single Variable</h3>
-<p>A normal variable stores one value:</p>
-<pre class="javascript-example"><code>let lastMonth = 450
-console.log(lastMonth)</code></pre>
-<p>An array stores many:</p>
-<pre class="javascript-example"><code>let monthlyDemand = [480, 240, 180, 300, 360, 120, 90, 540, 420, 240, 180, 450]
-console.log(monthlyDemand)</code></pre>
-<p>This ability to group related values is essential when you&#8217;re dealing
-with spreadsheet data, which naturally comes in lists.</p>
-<h3 data-number="6.1.2"
-id="arrays-are-how-google-sheets-returns-ranges"><span
-class="header-section-number">6.1.2</span> Arrays Are How Google Sheets
-Returns Ranges</h3>
-<p>When you read a single cell, you get a single value. But when you
-read <strong>multiple cells</strong>, Apps Script returns an
-<strong>array of arrays</strong>:</p>
+              <!--postBegin--><h1 data-number="6" id="grounding-and-bonding"><span
+class="header-section-number">6</span> Grounding and Bonding</h1>
+<p><strong>Grounding &amp; Bonding</strong> is the heaviest single topic
+on Utah&#8217;s Journeyman written exam &#8212; about <strong>10 questions</strong>.
+It is also where apprentices most often mix up words that sound alike.
+This chapter slows down on purpose.</p>
+<p>You will live in <strong>Article 250</strong>, with definitions from
+<strong>Article 100</strong> and equipment rules scattered elsewhere.
+Keep your NEC open while you study.</p>
+<h2 data-number="6.1" id="the-three-jobs-people-confuse"><span
+class="header-section-number">6.1</span> The Three Jobs People
+Confuse</h2>
+<h3 data-number="6.1.1" id="system-grounding"><span
+class="header-section-number">6.1.1</span> 1. System grounding</h3>
+<p>Connecting a current-carrying conductor (usually the
+<strong>neutral</strong>) to earth through a grounding electrode system.
+Purpose:</p>
 <ul>
-<li>Each <strong>inner array</strong> represents a row</li>
-<li>The <strong>outer array</strong> contains all the rows you
-requested</li>
+<li>Stabilize voltage to earth during normal operation</li>
+<li>Limit overvoltages from lightning / line surges / unintentional
+contact with higher voltage lines</li>
+<li>Provide a reference so that a hot-to-earth fault becomes a
+detectable overcurrent event (together with bonding)</li>
 </ul>
-<p>This mirrors the shape of the spreadsheet, but in JavaScript form.
-Once you understand arrays of arrays, you can process an entire demand
-column or item catalog at once instead of working cell by cell.</p>
-<h3 data-number="6.1.3"
-id="arrays-make-your-scripts-faster-and-cleaner"><span
-class="header-section-number">6.1.3</span> Arrays Make Your Scripts
-Faster and Cleaner</h3>
-<p>Apps Script is at its best when you read a whole range into an array,
-process the data in memory, and write the results back in one step. This
-is dramatically faster than touching the spreadsheet repeatedly. Arrays
-make it possible.</p>
-<h3 data-number="6.1.4"
-id="arrays-help-you-think-in-terms-of-data-not-cells"><span
-class="header-section-number">6.1.4</span> Arrays Help You Think in
-Terms of Data, Not Cells</h3>
-<p>Once you start using arrays, your mental model shifts. Instead of
-&#8220;read A2,&#8221; you think &#8220;get the second item in the list.&#8221; Instead of &#8220;look
-at each cell in column B,&#8221; you think &#8220;consider each row and look at
-index 1.&#8221; Instead of &#8220;write to row 10,&#8221; you think &#8220;update the tenth
-array element.&#8221; This is how real applications handle data &#8212; by working
-with collections rather than isolated pieces.</p>
-<h3 data-number="6.1.5" id="what-youll-learn-in-this-chapter"><span
-class="header-section-number">6.1.5</span> What You&#8217;ll Learn in This
-Chapter</h3>
-<p>In the sections ahead, you&#8217;ll explore how to create and use arrays,
-how to work with the arrays of arrays that Google Sheets returns, how to
-reach individual values inside them, and how to write arrays back into
-the sheet. By the end, arrays will feel natural &#8212; and you&#8217;ll be ready to
-handle the store&#8217;s demand history and catalog with confidence and
-speed.</p>
-<h2 data-number="6.2" id="understanding-arrays"><span
-class="header-section-number">6.2</span> Understanding Arrays</h2>
-<p>Arrays are one of the most important data structures you&#8217;ll use in
-JavaScript and Apps Script. If variables let you store a single value,
-arrays let you store <strong>many values in a single place</strong> &#8212; a
-list, a sequence, a collection. This becomes essential with spreadsheet
-data, because Sheets almost always gives you information in groups:
-rows, columns, or whole tables.</p>
-<p>Think of an array as a row of labeled boxes, each holding a value.
-You can look inside any box, change what&#8217;s in it, or look at all of them
-one by one.</p>
-<h3 data-number="6.2.1" id="what-an-array-looks-like"><span
-class="header-section-number">6.2.1</span> What an Array Looks Like</h3>
-<p>Arrays are created using square brackets:</p>
-<pre class="javascript-example"><code>let items = [&quot;classroom clicker&quot;, &quot;whiteboard marker&quot;, &quot;USB drive&quot;]
-let monthlyDemand = [480, 240, 180, 300, 360, 120, 90, 540, 420, 240, 180, 450]</code></pre>
-<p>Each item has a position called an <strong>index</strong>. JavaScript
-starts counting at <strong>0</strong>, not 1:</p>
-<ul>
-<li><code>monthlyDemand[0]</code> &#8594; <code>480</code> (January)</li>
-<li><code>monthlyDemand[1]</code> &#8594; <code>240</code> (February)</li>
-<li><code>monthlyDemand[7]</code> &#8594; <code>540</code> (August, the
-semester-start spike)</li>
-</ul>
-<p>This &#8220;zero-based indexing&#8221; is standard in most programming
-languages.</p>
-<h3 data-number="6.2.2" id="accessing-and-changing-array-values"><span
-class="header-section-number">6.2.2</span> Accessing and Changing Array
-Values</h3>
-<p>You can read a value by referencing its index:</p>
-<pre class="javascript-example"><code>let january = monthlyDemand[0]</code></pre>
-<p>You can also change a value:</p>
-<pre class="javascript-example"><code>monthlyDemand[6] = 100   // revise July&#39;s demand to 100</code></pre>
-<p>Or add a new value &#8212; say, the first month of a new year:</p>
-<pre class="javascript-example"><code>monthlyDemand.push(500)</code></pre>
-<p>Arrays grow as needed &#8212; you don&#8217;t have to declare their size ahead of
-time.</p>
-<h3 data-number="6.2.3" id="arrays-can-hold-any-type-of-data"><span
-class="header-section-number">6.2.3</span> Arrays Can Hold Any Type of
-Data</h3>
-<p>Arrays aren&#8217;t limited to one type of value. You can mix strings,
-numbers, and booleans &#8212; which is exactly what a catalog row looks
-like:</p>
-<pre class="javascript-example"><code>let row = [&quot;classroom clicker&quot;, 120, 64800]</code></pre>
-<p>In practice, keep each kind of array consistent so your code stays
-predictable: a demand series is all numbers, a list of item names is all
-strings, and a catalog is a table of rows that each follow the same
-column pattern.</p>
-<h3 data-number="6.2.4" id="common-mistakes-to-watch-for"><span
-class="header-section-number">6.2.4</span> Common Mistakes to Watch
-For</h3>
-<p><strong>Off-by-one errors.</strong> Because arrays start at index 0,
-a twelve-month series has indexes 0 through 11. Reaching past the end
-returns <code>undefined</code>:</p>
-<pre class="javascript-example"><code>let demand = [480, 240, 180, 300, 360, 120, 90, 540, 420, 240, 180, 450]
-demand[12]   // undefined &#8212; there is no 13th month</code></pre>
-<p><strong>Empty arrays.</strong> An array with no items still exists,
-but accessing any index returns <code>undefined</code>:</p>
-<pre class="javascript-example"><code>let empty = []
-empty[0]   // undefined</code></pre>
-<p><strong>Forgetting that arrays are ordered.</strong> When order
-matters &#8212; and for a demand history it absolutely does, since January
-must stay January &#8212; be careful adding or removing items.</p>
-<h3 data-number="6.2.5" id="why-arrays-matter-in-apps-script-1"><span
-class="header-section-number">6.2.5</span> Why Arrays Matter in Apps
-Script</h3>
-<p>Arrays become essential the moment you work with Google Sheets. For
-example, reading the clicker&#8217;s twelve months of demand from a
-column:</p>
-<pre class="javascript-example"><code>let sheet = SpreadsheetApp.getActiveSheet()
-let range = sheet.getRange(&quot;B2:B13&quot;)
-let values = range.getValues()</code></pre>
-<p><code>getValues()</code> returns an array of arrays &#8212; an array of
-rows, where each row is itself an array. You&#8217;ll explore this in the next
-section, but the key idea is this: <strong>arrays are how Apps Script
-represents spreadsheet data.</strong> If you want to process a demand
-column or a catalog, you&#8217;ll be working with arrays.</p>
-<h3 data-number="6.2.6" id="what-you-can-do-with-arrays"><span
-class="header-section-number">6.2.6</span> What You Can Do With
-Arrays</h3>
-<p>By the end of this chapter, arrays will feel like second nature.
-You&#8217;ll use them to read a demand column or catalog into memory,
-transform values before writing them back, build new lists from existing
-ones, and represent an entire table at once. Arrays are the gateway to
-handling real data at scale &#8212; and they set up the arrays of arrays that
-Google Sheets hands you.</p>
-<h2 data-number="6.3" id="arrays-and-google-sheets"><span
-class="header-section-number">6.3</span> Arrays and Google Sheets</h2>
-<p>Arrays become truly useful once you start working with data from a
-sheet. Almost everything you read &#8212; a column of demand, a row of item
-details, or a whole catalog &#8212; comes back as an <strong>array</strong>.
-And when you read more than one cell at a time, Apps Script gives you an
-<strong>array of arrays</strong>, where each inner array is a single
-row.</p>
-<h3 data-number="6.3.1" id="getvalue-vs.-getvalues"><span
-class="header-section-number">6.3.1</span> <code>getValue()</code>
-vs.&#160;<code>getValues()</code></h3>
-<p>These two methods behave very differently.
-<strong><code>getValue()</code></strong> returns a <em>single
-value</em>; <strong><code>getValues()</code></strong> returns an
-<em>array of arrays</em>.</p>
-<pre class="javascript-example"><code>let sheet = SpreadsheetApp.getActiveSheet()
-
-let oneMonth = sheet.getRange(&quot;B2&quot;).getValue()        // one value
-
-let allMonths = sheet.getRange(&quot;B2:B13&quot;).getValues()  // array of arrays</code></pre>
-<p>If you log <code>allMonths</code>, you&#8217;ll see the demand column as
-rows:</p>
-<pre class="javascript-example"><code>[
-  [480],
-  [240],
-  [180],
-  [300]
-  // ...and so on, one row per month
-]</code></pre>
-<p>Each inner array represents one row from the range.</p>
-<h3 data-number="6.3.2" id="thinking-in-rows-and-columns"><span
-class="header-section-number">6.3.2</span> Thinking in Rows and
-Columns</h3>
-<p>When you read a range like <code>"A2:C2"</code>, you get <strong>one
-row</strong>, represented as an array:</p>
-<pre class="javascript-example"><code>[&quot;classroom clicker&quot;, 120, 64800]</code></pre>
-<p>When you read <code>"A2:C4"</code>, you get <strong>three
-rows</strong>, represented as an array of arrays:</p>
-<pre class="javascript-example"><code>[
-  [&quot;classroom clicker&quot;, 120, 64800],
-  [&quot;whiteboard marker&quot;, 480, 9000],
-  [&quot;USB drive&quot;, 75, 42000]
-]</code></pre>
-<p>This structure mirrors the spreadsheet: the outer array is all the
-rows, the inner arrays are each row, and the items inside each inner
-array are the cells in that row. Once you see the pattern, it becomes
-intuitive.</p>
-<h3 data-number="6.3.3" id="extracting-values"><span
-class="header-section-number">6.3.3</span> Extracting Values</h3>
-<p>In the next chapter we&#8217;ll use a &#8220;loop&#8221; to walk through an array
-elegantly, but for now let&#8217;s see how to reach individual values in an
-array of arrays. Suppose the store&#8217;s catalog sits in a sheet like
-this:</p>
+<h3 data-number="6.1.2" id="equipment-grounding"><span
+class="header-section-number">6.1.2</span> 2. Equipment grounding</h3>
+<p>Providing a low-impedance path from exposed metal parts back to the
+source so that <strong>fault current</strong> can flow enough to trip an
+OCPD quickly. The <strong>equipment grounding conductor (EGC)</strong>
+does this job. Earth itself is <strong>not</strong> a reliable
+fault-clearing path &#8212; dirt is not a conductor you trust for clearing a
+breaker.</p>
+<h3 data-number="6.1.3" id="bonding"><span
+class="header-section-number">6.1.3</span> 3. Bonding</h3>
+<p><strong>Electrically connecting</strong> metal parts so they are
+continuous. Bonding jumpers make enclosures, raceways, and piping
+participate in the fault path or equalize potential. Bonding is about
+continuity; grounding electrode connections are about earth reference &#8212;
+related, not identical.</p>
+<h2 data-number="6.2" id="critical-definitions-learn-precisely"><span
+class="header-section-number">6.2</span> Critical Definitions (Learn
+Precisely)</h2>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr>
-<th></th>
-<th>A</th>
-<th>B</th>
-<th>C</th>
+<th>Term</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>2</td>
-<td>classroom clicker</td>
-<td>120</td>
-<td>64800</td>
+<td>Grounded conductor</td>
+<td>Circuit conductor intentionally grounded (often neutral)</td>
 </tr>
 <tr>
-<td>3</td>
-<td>whiteboard marker</td>
-<td>480</td>
-<td>9000</td>
+<td>Grounding electrode</td>
+<td>Object that establishes connection to earth (rod, pipe, plate,
+concrete-encased, ground ring, metal water pipe, etc.)</td>
 </tr>
 <tr>
-<td>4</td>
-<td>USB drive</td>
-<td>75</td>
-<td>42000</td>
+<td>Grounding electrode conductor (GEC)</td>
+<td>Connects the grounded system / equipment to the grounding
+electrode</td>
+</tr>
+<tr>
+<td>Equipment grounding conductor (EGC)</td>
+<td>Bonds equipment/enclosures to the system grounded conductor / source
+for fault clearing</td>
+</tr>
+<tr>
+<td>Main bonding jumper</td>
+<td>Connects grounded conductor to service enclosure / grounding bus at
+service</td>
+</tr>
+<tr>
+<td>System bonding jumper</td>
+<td>Similar role for separately derived systems</td>
+</tr>
+<tr>
+<td>Supply-side bonding jumper</td>
+<td>Bonding on the supply side of the service disconnect / SDS
+disconnect</td>
 </tr>
 </tbody>
 </table>
-<p>If you run this statement:</p>
-<pre class="javascript-example"><code>let catalog = sheet.getRange(&quot;A2:C4&quot;).getValues()</code></pre>
-<p>you&#8217;ll have a variable <code>catalog</code> holding an array of
-arrays:</p>
-<pre class="javascript-example"><code>[
-  [&quot;classroom clicker&quot;, 120, 64800],
-  [&quot;whiteboard marker&quot;, 480, 9000],
-  [&quot;USB drive&quot;, 75, 42000]
-]</code></pre>
-<p>Here&#8217;s one way to pull the first row into individual variables:</p>
-<pre class="javascript-example"><code>let catalog = sheet.getRange(&quot;A2:C4&quot;).getValues()
-
-let firstRow = catalog[0]              // [&quot;classroom clicker&quot;, 120, 64800]
-let item = firstRow[0]                 // &quot;classroom clicker&quot;
-let onHand = firstRow[1]               // 120
-let annualDollarVolume = firstRow[2]   // 64800</code></pre>
-<p>We assign <code>firstRow</code> to the first element of
-<code>catalog</code>. That element is itself an array, holding the item,
-its on-hand quantity, and its annual dollar volume. We can reach the
-same values without the intermediate variable:</p>
-<pre class="javascript-example"><code>let catalog = sheet.getRange(&quot;A2:C4&quot;).getValues()
-
-let item = catalog[0][0]                 // &quot;classroom clicker&quot;
-let onHand = catalog[0][1]               // 120
-let annualDollarVolume = catalog[0][2]   // 64800</code></pre>
-<p>Similarly, you can pull a single column &#8212; say, every item name &#8212; by
-reading the first element of each inner array:</p>
-<pre class="javascript-example"><code>let catalog = sheet.getRange(&quot;A2:C4&quot;).getValues()
-
-let first = catalog[0][0]    // classroom clicker
-let second = catalog[1][0]   // whiteboard marker
-let third = catalog[2][0]    // USB drive</code></pre>
-<p>You&#8217;re simply navigating the structure &#8212; outer array first, then
-inner array.</p>
-<h3 data-number="6.3.4" id="why-this-matters"><span
-class="header-section-number">6.3.4</span> Why This Matters</h3>
-<p>Arrays are the format Google Sheets uses to give you data. Once you
-can read and reach values inside arrays of arrays, you can work with an
-entire demand history or catalog at once, extract specific rows or
-columns, and prepare data for transformation. This sets the stage for
-everything that comes next &#8212; soon you&#8217;ll reshape these arrays and write
-them back into the sheet.</p>
-<h2 data-number="6.4" id="writing-arrays-back-to-the-worksheet"><span
-class="header-section-number">6.4</span> Writing Arrays Back to the
-Worksheet</h2>
-<p>Now that you&#8217;ve seen how Sheets gives you data as arrays, the next
-step is writing data back. This is where arrays become truly powerful:
-you can prepare everything in memory and write it to the spreadsheet in
-a single, efficient operation. Apps Script provides two methods:
-<strong><code>setValue()</code></strong> writes a <em>single</em> value,
-and <strong><code>setValues()</code></strong> writes an <em>array of
-arrays</em>. Since this chapter is about arrays, we&#8217;ll work with
-<code>setValues()</code>.</p>
-<h3 data-number="6.4.1" id="writing-a-single-row-one-inner-array"><span
-class="header-section-number">6.4.1</span> Writing a Single Row (One
-Inner Array)</h3>
-<p>To write one row, you pass a single inner array. Using a catalog
-row:</p>
-<pre class="javascript-example"><code>function writeOneRow() {
-  let sheet = SpreadsheetApp.getActiveSheet()
-  let row = [&quot;classroom clicker&quot;, 120, 64800]
-
-  sheet.getRange(&quot;A2:C2&quot;).setValues([row])
-}</code></pre>
-<p>Notice that <code>setValues()</code> expects an <strong>array of
-arrays</strong>, even for one row. That&#8217;s why we wrap <code>row</code>
-in another pair of brackets.</p>
-<h3 data-number="6.4.2"
-id="writing-multiple-rows-an-array-of-arrays"><span
-class="header-section-number">6.4.2</span> Writing Multiple Rows (An
-Array of Arrays)</h3>
-<p>This is also how you&#8217;d write the result of a calculation back to the
-sheet &#8212; for instance, a reorder status for each item:</p>
-<pre class="javascript-example"><code>function writeReorderStatus() {
-  let sheet = SpreadsheetApp.getActiveSheet()
-
-  let results = [
-    [&quot;classroom clicker&quot;, &quot;Reorder&quot;],
-    [&quot;whiteboard marker&quot;, &quot;Healthy&quot;],
-    [&quot;USB drive&quot;, &quot;Reorder&quot;]
-  ]
-
-  sheet.getRange(&quot;E2:F4&quot;).setValues(results)
-}</code></pre>
-<p>Each inner array is a row, and the outer array holds all the rows. As
-long as the range size matches the array size (3 rows &#215; 2 columns here),
-Apps Script writes everything in one step.</p>
-<h3 data-number="6.4.3" id="why-this-matters-1"><span
-class="header-section-number">6.4.3</span> Why This Matters</h3>
-<p>Writing data with <code>setValues()</code> is fast (one operation
-instead of many), clean (your script stays simple and readable), and
-reliable (the array&#8217;s structure matches the sheet&#8217;s). It&#8217;s the preferred
-way to write any non-trivial amount of data back into Google Sheets.</p>
-<h3 data-number="6.4.4" id="a-helpful-pattern-to-remember"><span
-class="header-section-number">6.4.4</span> A Helpful Pattern to
-Remember</h3>
-<p>Whenever you want to write data:</p>
+<p>If a question says &#8220;grounded conductor,&#8221; it is talking about the
+<strong>neutral</strong> (in typical AC systems), not the green
+wire.</p>
+<h2 data-number="6.3"
+id="why-fault-clearing-needs-metal-continuity"><span
+class="header-section-number">6.3</span> Why Fault Clearing Needs Metal
+Continuity</h2>
+<p>Imagine a hot conductor contacts a metal box. For a breaker to trip,
+fault current must return to the source. The intended return is the
+<strong>EGC</strong> (or metallic raceway acting as EGC) back to the
+service neutral-ground bond, then to the source.</p>
+<p>If the EGC is missing or open:</p>
+<ul>
+<li>The box may remain energized</li>
+<li>Fault current may be too low to trip quickly (especially if someone
+is relying on earth alone)</li>
+<li>Shock hazard remains until something else fails</li>
+</ul>
+<p><strong>Effective ground-fault current path</strong> is the phrase to
+remember: continuous, permanent, low impedance, adequately sized, and
+capable of carrying fault current safely.</p>
+<h2 data-number="6.4" id="service-grounding-and-bonding"><span
+class="header-section-number">6.4</span> Service Grounding and
+Bonding</h2>
+<p>At the <strong>service</strong>:</p>
 <ol type="1">
-<li>Build an <strong>array of arrays</strong> in memory</li>
-<li>Select a range with the same dimensions</li>
-<li>Call <code>setValues()</code></li>
+<li>The grounded conductor is brought to the service disconnect
+enclosure.</li>
+<li>A <strong>main bonding jumper</strong> bonds the grounded conductor
+to the metal enclosure / grounding terminal bar.</li>
+<li>A <strong>GEC</strong> lands on the grounding electrode system.</li>
+<li>EGCs and metallic raceways bond to the same grounding terminal
+system so faults return to the bonded neutral.</li>
 </ol>
-<p>This pattern is the foundation of efficient spreadsheet automation &#8212;
-and notice what&#8217;s still missing. We can now hold the whole demand
-history and the whole catalog in arrays, but we&#8217;ve only reached into
-them one element at a time, by hand. To actually compute a forecast from
-twelve months of demand, or to run the reorder check on every item in
-the catalog, you need a way to step through an array automatically, one
-element after another. That is what loops do, and it&#8217;s where the next
-chapter begins.</p>
+<p>You normally <strong>bond neutral to ground only once</strong> on
+solidly grounded systems &#8212; at the service (or at a separately derived
+system), not again in subpanels.</p>
+<h2 data-number="6.5"
+id="subpanels-and-separately-derived-systems"><span
+class="header-section-number">6.5</span> Subpanels and Separately
+Derived Systems</h2>
+<h3 data-number="6.5.1" id="subpanel-downstream-of-service"><span
+class="header-section-number">6.5.1</span> Subpanel (downstream of
+service)</h3>
+<p>Use a <strong>4-wire</strong> feeder on 120/240 V single-phase (two
+hots, neutral, EGC):</p>
+<ul>
+<li>Neutral bar <strong>isolated</strong> from the can</li>
+<li>Grounding bar bonded to the can</li>
+<li>Neutral and ground <strong>not</strong> bonded together in the
+subpanel</li>
+</ul>
+<h3 data-number="6.5.2"
+id="separately-derived-system-e.g.-transformer"><span
+class="header-section-number">6.5.2</span> Separately derived system
+(e.g., transformer)</h3>
+<p>Bond the secondary grounded conductor to the enclosure with a
+<strong>system bonding jumper</strong>, connect to a grounding electrode
+per 250.30, and run EGCs on the secondary side correctly. Utah&#8217;s
+practical exam transformer termination task is the hands-on cousin of
+this theory.</p>
+<h2 data-number="6.6" id="grounding-electrodes-and-the-system"><span
+class="header-section-number">6.6</span> Grounding Electrodes and the
+&#8220;System&#8221;</h2>
+<p>Article 250 requires a grounding electrode system. Common
+electrodes:</p>
+<ul>
+<li>Metal underground water pipe (with supplemental electrode rules &#8212;
+water pipe alone is not enough in modern Code)</li>
+<li>Concrete-encased electrode (Ufer) &#8212; often excellent when
+present</li>
+<li>Ground ring</li>
+<li>Rod, pipe, plate electrodes</li>
+<li>Listed electrodes</li>
+<li>Other local metal underground systems as described in the Code</li>
+</ul>
+<h3 data-number="6.6.1" id="rod-electrodes"><span
+class="header-section-number">6.6.1</span> Rod electrodes</h3>
+<p>If using ground rods, resistance goals and the &#8220;two rod&#8221; practice
+appear in Code language: if a single rod does not meet the 25-ohm
+condition, an additional electrode is required &#8212; and in practice many
+installations drive two rods because measuring 25 ohms is uncommon on
+residential jobs. Know what the Code actually requires rather than
+jobsite folklore alone.</p>
+<h3 data-number="6.6.2" id="gec-sizing"><span
+class="header-section-number">6.6.2</span> GEC sizing</h3>
+<p>GEC size is based on the size of the <strong>service entrance
+conductors</strong> (Table 250.66), with notes for taps, multiple
+electrodes, and bonding jumpers. You do <strong>not</strong> size the
+GEC from the load calculation ampacity directly &#8212; you size from the
+table based on ungrounded service conductor size.</p>
+<h3 data-number="6.6.3" id="egc-sizing"><span
+class="header-section-number">6.6.3</span> EGC sizing</h3>
+<p>Equipment grounding conductors are generally sized from the
+<strong>rating of the OCPD ahead of the circuit</strong> using Table
+<strong>250.122</strong>, not from Table 250.66. If you upsize
+ungrounded conductors for voltage drop, you may need to proportionally
+upsize the EGC &#8212; a classic exam trap.</p>
+<h2 data-number="6.7"
+id="bonding-metal-water-piping-and-other-systems"><span
+class="header-section-number">6.7</span> Bonding Metal Water Piping and
+Other Systems</h2>
+<p>Metal water piping and other metal piping systems may require bonding
+to the electrical system so they cannot remain at a different potential
+during a fault. Bonding jumpers for piping use sizing rules tied to
+service conductors / tables in 250. Bonding around water meters and
+insulating sections matters so the path remains continuous.</p>
+<p>Gas piping bonding rules have been clarified over recent Code cycles
+&#8212; read the current 250 requirements rather than assuming old
+practices.</p>
+<h2 data-number="6.8"
+id="parallel-paths-and-objectionable-current"><span
+class="header-section-number">6.8</span> Parallel Paths and
+Objectionable Current</h2>
+<p>Normal neutral current should not flow on EGCs, cable trays, or water
+pipes. Objectionable current on grounding paths is why we isolate
+neutrals in subpanels and avoid multiple neutral-ground bonds. If you
+feel tingling on a pipe, suspect a wiring error creating parallel
+neutral paths.</p>
+<h2 data-number="6.9" id="isolated-ground-receptacles-concept"><span
+class="header-section-number">6.9</span> Isolated Ground Receptacles
+(Concept)</h2>
+<p>Some sensitive equipment uses isolated ground receptacles with an
+insulated EGC run to an isolated ground bus. These are easy to
+misinstall. Exam: know they still require proper grounding/bonding &#8212;
+&#8220;isolated&#8221; does not mean ungrounded.</p>
+<h2 data-number="6.10"
+id="temporary-installations-and-jobsite-grounding"><span
+class="header-section-number">6.10</span> Temporary Installations and
+Jobsite Grounding</h2>
+<p>Construction sites follow Article 590 and OSHA habits: GFCI
+protection for temporary wiring, proper generator grounding/bonding
+schemes depending on whether the generator is separately derived, and
+Assured Equipment Grounding Conductor programs on larger sites.</p>
+<h2 data-number="6.11" id="gfci-vs-grounding"><span
+class="header-section-number">6.11</span> GFCI vs Grounding</h2>
+<p>GFCI can protect people even when an EGC is compromised in some
+scenarios, but <strong>GFCI is not a substitute</strong> for required
+equipment grounding. Do not answer exam questions as if GFCI makes
+grounding optional.</p>
+<h2 data-number="6.12" id="high-yield-article-250-navigation-tips"><span
+class="header-section-number">6.12</span> High-Yield Article 250
+Navigation Tips</h2>
+<p>When a practice question appears, ask:</p>
+<ol type="1">
+<li>Are they asking about <strong>GEC</strong>, <strong>EGC</strong>, or
+<strong>bonding jumper</strong>?</li>
+<li>Is this <strong>service</strong>, <strong>SDS</strong>, or
+<strong>feeder/branch</strong> equipment?</li>
+<li>Which <strong>table</strong> &#8212; 250.66 or 250.122?</li>
+<li>Is someone trying to use <strong>earth</strong> as the fault path?
+(Wrong.)</li>
+<li>Is a <strong>second neutral-ground bond</strong> being proposed
+downstream? (Usually wrong.)</li>
+</ol>
+<p>Tab these in your Code book (if tabs are allowed per Prov rules for
+your sitting):</p>
+<ul>
+<li>250.4 &#8212; general requirements / performance</li>
+<li>250.24 &#8212; service grounding/bonding</li>
+<li>250.30 &#8212; separately derived systems</li>
+<li>250.52 / 250.53 &#8212; electrodes</li>
+<li>250.66 &#8212; GEC sizing</li>
+<li>250.102 &#8212; bonding jumpers</li>
+<li>250.118 &#8212; what may serve as EGC</li>
+<li>250.122 &#8212; EGC sizing</li>
+</ul>
+<h2 data-number="6.13" id="worked-mini-problems"><span
+class="header-section-number">6.13</span> Worked Mini-Problems</h2>
+<p><strong>1. EGC sizing.</strong> A feeder is protected by a 200 A
+breaker. What table do you use for the copper EGC size? &#8594;
+<strong>250.122</strong>. Look up 200 A row (commonly 6 AWG Cu &#8212; verify
+in your book).</p>
+<p><strong>2. Voltage-drop upsize.</strong> Same feeder uses 3/0 Cu for
+ampacity but you upsize to 250 kcmil for voltage drop. What happens to
+the EGC? &#8594; Upsize EGC proportionally per 250.122(B).</p>
+<p><strong>3. Subpanel.</strong> A garage subpanel has the neutral bar
+bonded to the enclosure with the green screw installed, and a 3-wire
+feeder (no EGC). Name two violations. &#8594; Neutral-ground bond in subpanel;
+missing EGC / improper feeder.</p>
+<p><strong>4. Water pipe electrode.</strong> A metal underground water
+pipe is present. Are you done with electrodes? &#8594; Usually no &#8212; Code
+requires a supplemental electrode with water pipe electrodes.</p>
+<h2 data-number="6.14" id="practice-problems"><span
+class="header-section-number">6.14</span> Practice Problems</h2>
+<ol type="1">
+<li>True or false: Driving a ground rod at a subpanel allows you to omit
+the EGC in the feeder if the rod resistance is low.</li>
+<li>Which conductor normally carries current during everyday operation:
+grounded conductor or EGC?</li>
+<li>Main bonding jumper location: service equipment or subpanel?</li>
+<li>Table for sizing GEC to a ground rod system vs table for sizing
+conduit EGC for a branch circuit?</li>
+<li>Why is earth a poor equipment grounding means for clearing
+breakers?</li>
+<li>On a 480 V Delta&#8211;Wye transformer SDS, where do you establish the
+secondary system bonding jumper: primary or secondary side?</li>
+</ol>
+<h3 data-number="6.14.1" id="answers"><span
+class="header-section-number">6.14.1</span> Answers</h3>
+<ol type="1">
+<li>False &#8212; earth cannot replace the EGC fault path.</li>
+<li>Grounded conductor (neutral) carries normal unbalanced/load current;
+EGC should not (except during faults).</li>
+<li>Service equipment (for the premises service).</li>
+<li>GEC: 250.66 (with rod special maximums/notes); branch EGC:
+250.122.</li>
+<li>Soil resistance is high and variable; fault current may not rise
+enough to trip an OCPD quickly.</li>
+<li>Secondary side (separately derived system bonding/grounding rules in
+250.30).</li>
+</ol>
+<h2 data-number="6.15" id="looking-ahead"><span
+class="header-section-number">6.15</span> Looking Ahead</h2>
+<p>With fault paths understood, Chapter 7 turns to what you mount on the
+wall: <strong>boxes</strong>, device fill, <strong>lighting</strong>,
+receptacles, and general-use equipment rules that fill another large
+block of exam questions.</p>
+<hr />
 <!--postEnd-->
               </div>
 </div>
@@ -1210,9 +1153,9 @@ chapter begins.</p>
 
 <script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/321148285-widgets.js"></script>
 <script type='text/javascript'>
-window['__wavt'] = 'AEUoTZrP6UaKgJkkUeVeb9JfSLe2:1784237239047';_WidgetManager._Init('//draft.blogger.com/rearrange?blogID\x3d9088886865899659654','//book1013.blogspot.com/2000/02/6.html','9088886865899659654');
-_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '9088886865899659654', 'title': 'book1013', 'url': 'https://book1013.blogspot.com/2000/02/6.html', 'canonicalUrl': 'https://book1013.blogspot.com/2000/02/6.html', 'homepageUrl': 'https://book1013.blogspot.com/', 'searchUrl': 'https://book1013.blogspot.com/search', 'canonicalHomepageUrl': 'https://book1013.blogspot.com/', 'blogspotFaviconUrl': 'https://book1013.blogspot.com/favicon.ico', 'bloggerUrl': 'https://draft.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22book1013 - RSS\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://draft.blogger.com/feeds/9088886865899659654/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/4334661697671973579/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': true, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/c5aecb47b31d09da', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '4334661697671973579', 'pageName': '6. Arrays', 'pageTitle': 'book1013: 6. Arrays'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': '6. Arrays', 'description': 'monaco  6  Arrays \r 6.1  Why Arrays Matter in Apps\r Script \r When you start automating Google Sheets with Apps Script, you quickly\r discover...', 'url': 'https://book1013.blogspot.com/2000/02/6.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 4334661697671973579}}]);
-_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'mainblogsec', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/3899201366-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/828616780-lightbox_bundle.css'}, 'displayModeFull'));
+window['__wavt'] = 'AEUoTZrWNhoZffAZlCS_aIPlVMgP:1784270490001';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d9088886865899659654','//book1013.blogspot.com/2000/02/6.html','9088886865899659654');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '9088886865899659654', 'title': 'book1013', 'url': 'https://book1013.blogspot.com/2000/02/6.html', 'canonicalUrl': 'https://book1013.blogspot.com/2000/02/6.html', 'homepageUrl': 'https://book1013.blogspot.com/', 'searchUrl': 'https://book1013.blogspot.com/search', 'canonicalHomepageUrl': 'https://book1013.blogspot.com/', 'blogspotFaviconUrl': 'https://book1013.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22book1013 - RSS\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/9088886865899659654/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/4334661697671973579/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': true, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/0b901e5396ee8015', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '4334661697671973579', 'pageName': '6. Grounding and Bonding', 'pageTitle': 'book1013: 6. Grounding and Bonding'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': '6. Grounding and Bonding', 'description': '6  Grounding and Bonding  Grounding \x26 Bonding  is the heaviest single topic on Utah\u2019s Journeyman written exam \u2014 about 10 questions . It is a...', 'url': 'https://book1013.blogspot.com/2000/02/6.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 4334661697671973579}}]);
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'mainblogsec', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1434207229-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/828616780-lightbox_bundle.css'}, 'displayModeFull'));
 </script>
 </body>
 </html>

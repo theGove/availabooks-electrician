@@ -782,7 +782,7 @@ right: .75rem;
     }    
 
   </script>
-<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=210ce249-8dea-4558-980a-5c1935544cb7' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=210ce249-8dea-4558-980a-5c1935544cb7' rel='stylesheet'/></noscript>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=52990b10-826a-4186-92b2-887cd56185a0' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=52990b10-826a-4186-92b2-887cd56185a0' rel='stylesheet'/></noscript>
 <meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
 <meta name='google-adsense-platform-domain' content='blogspot.com'/>
 
@@ -801,7 +801,8 @@ right: .75rem;
 <div class='hide' id='kind'>chapter</div>
 <div class='index-boxnbt'>
 <header class='entry-header'>
-<h1 class='post-title entry-title' itemprop='headline'><span class='material-symbols-outlined menu-button' onclick='showMenu()'>menu</span><span id='title'>5. Making Decisions</span></h1>
+<h1 class='post-title entry-title' itemprop='headline'><span class='material-symbols-outlined menu-button' onclick='showMenu()'>menu</span><span id='title'>5. Overcurrent Protection, Services,
+Feeders, and Branch Circuits</span></h1>
 </header>
 <div id='menu'>
 <div class='menu-header'><span class='material-symbols-outlined menu-button' onclick='hideMenu()'>close</span><span id='book-title'><a href='toc.html'>PPWJS</a></span></div>
@@ -823,343 +824,281 @@ right: .75rem;
 <button class='nav' id='prior-button' onclick='navigate(&#39;prior&#39;)'><span class='material-symbols-outlined'>arrow_back</span></button>
 <button class='nav' id='next-button' onclick='navigate(&#39;next&#39;)'><span class='material-symbols-outlined'>arrow_forward</span></button>
               
-              <!--postBegin--><div class="module">monaco</div>
-<h1 data-number="5" id="making-decisions"><span
-class="header-section-number">5</span> Making Decisions</h1>
-<h2 data-number="5.1" id="if-else-if-else"><span
-class="header-section-number">5.1</span> if, else if, else</h2>
-<p>Programs become truly useful when they can make decisions. Instead of
-running the same instructions every time, your code can choose different
-paths depending on the situation &#8212; just as you do in everyday life. In
-JavaScript and Google Apps Script, the primary tool for decision-making
-is the <strong>if statement</strong>.</p>
-<p>We&#8217;re still at the BYU-Idaho University Store from the last chapter,
-but now the question has changed. We know <em>how many</em> clickers to
-order at a time (the EOQ of 479). The new questions are <em>when</em> to
-place that order, and which of the store&#8217;s many items deserve the
-closest attention. Both turn out to be decisions of the same shape:
-compare the situation to a threshold, and act on the answer. The
-clicker&#8217;s threshold is its <strong>reorder point</strong> &#8212; about 12
-clickers sell per day, and a delivery takes about 10 days to arrive, so
-roughly 120 sell while we wait; add a 30-unit cushion for weeks that run
-hot and the reorder point is 150. (That cushion is &#8220;safety stock,&#8221; and
-pinning it down precisely takes demand variability we&#8217;ll reach later;
-for now, 150 is the number to beat.)</p>
-<p>Think of <code>if</code>, <code>else if</code>, and <code>else</code>
-as a branching path. Your program checks a condition and, based on
-whether it&#8217;s true or false, decides what to do next.</p>
-<h3 data-number="5.1.1" id="the-basic-if-statement"><span
-class="header-section-number">5.1.1</span> The Basic <code>if</code>
-Statement</h3>
-<p>An <code>if</code> statement checks a condition. If the condition is
-<strong>true</strong>, the code inside the block runs. If it&#8217;s
-<strong>false</strong>, the block is skipped.</p>
-<pre class="javascript-example"><code>let onHand = 120
-
-if (onHand &lt;= 150) {
-  console.log(&quot;Time to reorder&quot;)
-}</code></pre>
-<p>Here the message prints only if <code>onHand &lt;= 150</code> &#8212; the
-reorder point. Because 120 is at or below 150, it does: the clickers
-have dropped far enough that it&#8217;s time to order.</p>
-<h3 data-number="5.1.2" id="adding-more-options-with-else-if"><span
-class="header-section-number">5.1.2</span> Adding More Options With
-<code>else if</code></h3>
-<p>Sometimes one condition isn&#8217;t enough. You may want to check several
-possibilities in order. That&#8217;s where <code>else if</code> comes in.</p>
-<pre class="javascript-example"><code>let onHand = 220
-
-if (onHand &lt;= 150) {
-  console.log(&quot;Reorder now&quot;)
-} else if (onHand &lt;= 300) {
-  console.log(&quot;Getting low &#8212; keep an eye on it&quot;)
-}</code></pre>
-<p>The program checks the first condition. If it&#8217;s false, it moves on to
-the next. Only the block tied to the first condition that evaluates to
-true runs.</p>
-<h3 data-number="5.1.3" id="catching-everything-else-with-else"><span
-class="header-section-number">5.1.3</span> Catching Everything Else With
-<code>else</code></h3>
-<p>The <code>else</code> block runs when none of the previous conditions
-are true. It&#8217;s your fallback.</p>
-<pre class="javascript-example"><code>let onHand = 480
-
-if (onHand &lt;= 150) {
-  console.log(&quot;Reorder now&quot;)
-} else if (onHand &lt;= 300) {
-  console.log(&quot;Getting low &#8212; keep an eye on it&quot;)
-} else {
-  console.log(&quot;Stock is healthy&quot;)
-}</code></pre>
-<p>This structure guarantees that exactly one message prints, whatever
-the stock level.</p>
-<h3 data-number="5.1.4" id="how-this-applies-in-apps-script"><span
-class="header-section-number">5.1.4</span> How This Applies in Apps
-Script</h3>
-<p>Decision-making becomes especially powerful with spreadsheet data.
-You might check whether a cell is empty, decide whether a value crosses
-a threshold, sort items into groups, or trigger different actions.
-Here&#8217;s a script that reads an item&#8217;s on-hand quantity from cell A1 and
-writes a status into B1:</p>
-<pre class="javascript-example"><code>function checkStock() {
-  let sheet = SpreadsheetApp.getActiveSheet()
-  let onHand = sheet.getRange(&quot;A1&quot;).getValue()
-
-  if (onHand &lt;= 150) {
-    sheet.getRange(&quot;B1&quot;).setValue(&quot;Reorder now&quot;)
-  } else if (onHand &lt;= 300) {
-    sheet.getRange(&quot;B1&quot;).setValue(&quot;Getting low&quot;)
-  } else {
-    sheet.getRange(&quot;B1&quot;).setValue(&quot;Healthy&quot;)
-  }
-}</code></pre>
-<p>This is the heart of automation: your script looks at real data and
-responds intelligently.</p>
-<h3 data-number="5.1.5" id="why-if-statements-matter"><span
-class="header-section-number">5.1.5</span> Why <code>if</code>
-Statements Matter</h3>
-<p>With <code>if</code>, <code>else if</code>, and <code>else</code>,
-your programs stop being static and start becoming <em>smart</em>. They
-can react to changing stock, choose between actions, validate input,
-control the flow of a script, and make your spreadsheet tools feel
-responsive. These decision-making tools are the foundation for
-everything from simple checks to complex policy. Next, you&#8217;ll learn to
-combine conditions, compare values, and build more sophisticated
-decisions.</p>
-<h2 data-number="5.2" id="comparison-and-logical-operators"><span
-class="header-section-number">5.2</span> Comparison and Logical
-Operators</h2>
-<p>Decision-making depends on evaluating conditions &#8212; questions your
-program asks to decide what to do next. To express those questions, you
-use <strong>comparison operators</strong> and <strong>logical
-operators</strong>. They let your code compare values, combine
-conditions, and determine whether something is true or false. Once you
-understand them, your <code>if</code> statements become far more
-expressive.</p>
-<h3 data-number="5.2.1" id="comparison-operators"><span
-class="header-section-number">5.2.1</span> Comparison Operators</h3>
-<p>Comparison operators check how two values relate. They always produce
-a <strong>boolean</strong> &#8212; either <code>true</code> or
-<code>false</code>. The most common ones:</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Meaning</th>
-<th>Example</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>===</code></td>
-<td>equal to (strict)</td>
-<td><code>5 === 5</code></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>!==</code></td>
-<td>not equal to (strict)</td>
-<td><code>4 !== 5</code></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>==</code></td>
-<td>equal to (loose)</td>
-<td><code>"5" == 5</code></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>!=</code></td>
-<td>not equal to (loose)</td>
-<td><code>5 != 5</code></td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>&gt;</code></td>
-<td>greater than</td>
-<td><code>10 &gt; 7</code></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>&lt;</code></td>
-<td>less than</td>
-<td><code>3 &lt; 1</code></td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>&gt;=</code></td>
-<td>greater than or equal to</td>
-<td><code>8 &gt;= 8</code></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>&lt;=</code></td>
-<td>less than or equal to</td>
-<td><code>4 &lt;= 2</code></td>
-<td><code>false</code></td>
-</tr>
-</tbody>
-</table>
-<p>The <strong>strict</strong> operators (<code>===</code> and
-<code>!==</code>) are generally preferred over the
-<strong>loose</strong> ones (<code>==</code> and <code>!=</code>)
-because they compare both value <em>and</em> type, helping you avoid
-subtle bugs.</p>
-<p>For the reorder decision, the operator that matters is
-<code>&lt;=</code>:</p>
-<pre class="javascript-example"><code>let onHand = 140
-
-if (onHand &lt;= 150) {
-  console.log(&quot;Place an order&quot;)
-} else {
-  console.log(&quot;No action needed&quot;)
-}</code></pre>
-<p>The choice of <code>&lt;=</code> rather than <code>&lt;</code> is not
-cosmetic: at exactly the reorder point you still want to order, and
-using the wrong one would quietly let an item sit at its trigger level
-without reordering.</p>
-<h3 data-number="5.2.2" id="logical-operators"><span
-class="header-section-number">5.2.2</span> Logical Operators</h3>
-<p>Logical operators let you combine conditions or invert one. They&#8217;re
-essential when a decision depends on more than one thing.</p>
-<h4 data-number="5.2.2.1" id="and"><span
-class="header-section-number">5.2.2.1</span> AND
-(<code>&amp;&amp;</code>)</h4>
-<p>The whole expression is true only if both conditions are true.</p>
-<pre class="javascript-example"><code>if (onHand &lt;= 150 &amp;&amp; supplierIsPreferred) {
-  console.log(&quot;Place an order with the preferred supplier&quot;)
-}</code></pre>
-<h4 data-number="5.2.2.2" id="or"><span
-class="header-section-number">5.2.2.2</span> OR (<code>||</code>)</h4>
-<p>The whole expression is true if either condition is true.</p>
-<pre class="javascript-example"><code>if (isStockedOut || isOverstocked) {
-  console.log(&quot;Flag this item for review&quot;)
-}</code></pre>
-<h4 data-number="5.2.2.3" id="not"><span
-class="header-section-number">5.2.2.3</span> NOT (<code>!</code>)</h4>
-<p>Flips a boolean value.</p>
-<pre class="javascript-example"><code>if (!supplierIsPreferred) {
-  console.log(&quot;Use the backup supplier&quot;)
-}</code></pre>
-<p>Logical operators let you express more nuanced decisions, especially
-when working with real data from a spreadsheet.</p>
-<h3 data-number="5.2.3" id="using-operators-with-spreadsheet-data"><span
-class="header-section-number">5.2.3</span> Using Operators With
-Spreadsheet Data</h3>
-<p>Apps Script is often used to read values from cells and evaluate
-them. A common operations decision is sorting items into classes by how
-much money they tie up &#8212; an <strong>ABC classification</strong>. The
-idea, rooted in Pareto&#8217;s 80-20 rule, is to rank items by annual dollar
-volume (unit cost times annual demand) so the few high-value items get
-the closest watch and the many low-value ones get a lighter touch. This
-script reads an item&#8217;s annual dollar volume from A1 and writes its class
-into B1:</p>
-<pre class="javascript-example"><code>function classifyItem() {
-  let sheet = SpreadsheetApp.getActiveSheet()
-  let annualDollarVolume = sheet.getRange(&quot;A1&quot;).getValue()
-  let cell = sheet.getRange(&quot;B1&quot;)
-
-  if (annualDollarVolume &gt;= 50000) {
-    cell.setValue(&quot;A&quot;)
-  } else if (annualDollarVolume &gt;= 10000 &amp;&amp; annualDollarVolume &lt; 50000) {
-    cell.setValue(&quot;B&quot;)
-  } else {
-    cell.setValue(&quot;C&quot;)
-  }
-}</code></pre>
-<p>Here comparison operators (<code>&gt;=</code>, <code>&lt;</code>) and
-a logical operator (<code>&amp;&amp;</code>) work together to classify
-the item. This is the simple, threshold-based version of ABC; the more
-rigorous method &#8212; sorting the whole catalog and walking down the
-cumulative dollar volume until you&#8217;ve covered 80%, then 95% &#8212; needs a
-way to process every item at once, which the next chapters provide.</p>
-<h3 data-number="5.2.4" id="why-these-operators-matter"><span
-class="header-section-number">5.2.4</span> Why These Operators
-Matter</h3>
-<p>Comparison and logical operators are the backbone of decision-making.
-They let your scripts validate input, categorize data, check several
-conditions at once, control flow, and respond intelligently to
-spreadsheet values. Once you&#8217;re comfortable with them, you can write
-much more expressive logic &#8212; tools that adapt to whatever data they
-encounter.</p>
-<h2 data-number="5.3"
-id="real-world-examples-of-decision-making-in-apps-script"><span
-class="header-section-number">5.3</span> Real-World Examples of
-Decision-Making in Apps Script</h2>
-<p>Let&#8217;s bring the pieces together with the two decisions the University
-Store makes most often: when to reorder an item, and how much attention
-each item deserves.</p>
-<h3 data-number="5.3.1" id="deciding-when-to-reorder"><span
-class="header-section-number">5.3.1</span> Deciding When to Reorder</h3>
-<p>A good reorder rule doesn&#8217;t look at on-hand stock alone &#8212; it looks at
-the <strong>inventory position</strong>: what&#8217;s on hand, plus what&#8217;s
-already on order, minus what&#8217;s owed to back-orders. Tracking the
-position keeps you from ordering twice while a shipment is already on
-the way. When the position drops to the reorder point or below, you
-place an order &#8212; for the EOQ of 479 we computed in the last chapter.</p>
-<pre class="javascript-example"><code>function reorderDecision() {
-  let sheet = SpreadsheetApp.getActiveSheet()
-  let onHand = sheet.getRange(&quot;B2&quot;).getValue()
-  let onOrder = sheet.getRange(&quot;C2&quot;).getValue()
-  let backorders = sheet.getRange(&quot;D2&quot;).getValue()
-
-  let inventoryPosition = onHand + onOrder - backorders
-  let reorderPoint = 150
-  let orderQuantity = 479
-
-  if (inventoryPosition &lt;= reorderPoint) {
-    sheet.getRange(&quot;E2&quot;).setValue(&quot;ORDER &quot; + orderQuantity)
-  } else {
-    sheet.getRange(&quot;E2&quot;).setValue(&quot;HOLD&quot;)
-  }
-}</code></pre>
-<p>Two details carry the whole policy. The comparison is
-<code>&lt;=</code>, not <code>&lt;</code>, so an item resting exactly at
-its reorder point still triggers an order. And the decision is made on
-inventory position, not on-hand, so an item that&#8217;s low on the shelf but
-has a delivery already inbound won&#8217;t set off a second, unnecessary
-order.</p>
-<h3 data-number="5.3.2" id="giving-each-item-the-right-attention"><span
-class="header-section-number">5.3.2</span> Giving Each Item the Right
-Attention</h3>
-<p>Not every item deserves the same scrutiny. ABC classification ranks
-items by annual dollar volume so the handful that tie up most of the
-money &#8212; the A items &#8212; get the closest watch, while the many low-value C
-items get a lighter touch. In a typical catalog the A items are roughly
-a fifth of the products but the bulk of the value, and the C items are
-about half the products but a small slice of it. You can let the class
-drive the policy so attention follows value:</p>
-<pre class="javascript-example"><code>function reviewPolicy() {
-  let sheet = SpreadsheetApp.getActiveSheet()
-  let itemClass = sheet.getRange(&quot;B2&quot;).getValue()
-  let inventoryPosition = sheet.getRange(&quot;C2&quot;).getValue()
-  let reorderPoint = sheet.getRange(&quot;D2&quot;).getValue()
-  let cell = sheet.getRange(&quot;E2&quot;)
-
-  if (itemClass === &quot;A&quot; &amp;&amp; inventoryPosition &lt;= reorderPoint) {
-    cell.setValue(&quot;Order now and review weekly&quot;)
-  } else if (itemClass === &quot;C&quot;) {
-    cell.setValue(&quot;Simple min-max; review quarterly&quot;)
-  } else {
-    cell.setValue(&quot;Standard review&quot;)
-  }
-}</code></pre>
-<p>Here an equality (<code>===</code>), a comparison
-(<code>&lt;=</code>), and a logical AND (<code>&amp;&amp;</code>) work
-together to turn a value class into an operating policy &#8212; exactly the
-kind of judgment a buyer makes by hand, now written down so it runs the
-same way every time.</p>
-<h3 data-number="5.3.3" id="from-one-item-to-the-whole-catalog"><span
-class="header-section-number">5.3.3</span> From One Item to the Whole
-Catalog</h3>
-<p>Each function here decides about a single item, but the University
-Store stocks hundreds. To run the same reorder check across every row of
-a catalog &#8212; and to compute ABC the rigorous way, by sorting the whole
-list and walking down it until the cumulative dollar volume crosses 80%
-and then 95% &#8212; you need a way to hold many items at once and step
-through them one by one. That is exactly what arrays and loops give you,
-and it&#8217;s where the next two chapters go.</p>
+              <!--postBegin--><h1 data-number="5"
+id="overcurrent-protection-services-feeders-and-branch-circuits"><span
+class="header-section-number">5</span> Overcurrent Protection, Services,
+Feeders, and Branch Circuits</h1>
+<p>This chapter covers three of the densest exam areas:
+<strong>Overcurrent Protection</strong>, <strong>Services, Feeders &amp;
+Branch Circuits</strong>, and a large share of <strong>Definitions &amp;
+General Requirements</strong>. If you can size a breaker for a
+continuous load, tell service from feeder from branch circuit, and
+navigate Articles <strong>210</strong>, <strong>215</strong>,
+<strong>220</strong>, <strong>230</strong>, and <strong>240</strong>,
+you are in strong shape for Utah&#8217;s written exam.</p>
+<h2 data-number="5.1" id="overcurrent-three-personalities"><span
+class="header-section-number">5.1</span> Overcurrent: Three
+Personalities</h2>
+<p><strong>Overcurrent</strong> means any current beyond rated ampacity.
+It shows up as:</p>
+<ol type="1">
+<li><strong>Overload</strong> &#8212; too much current for too long through
+the normal path (motor struggling, too many heaters).</li>
+<li><strong>Short circuit</strong> &#8212; hot-to-hot or hot-to-neutral
+low-impedance fault; very high current.</li>
+<li><strong>Ground fault</strong> &#8212; hot to ground / EGC / grounded
+metal; also high current if the path is effective.</li>
+</ol>
+<p>Fuses and circuit breakers are <strong>overcurrent protective devices
+(OCPDs)</strong>. They must protect conductors and equipment per Article
+240 and equipment listing rules.</p>
+<h2 data-number="5.2" id="device-types"><span
+class="header-section-number">5.2</span> Device Types</h2>
+<p><strong>Circuit breakers</strong> &#8212; resettable, often
+thermal-magnetic: thermal element for overload, magnetic for short
+circuit.</p>
+<p><strong>Fuses</strong> &#8212; one-time (or renewable in older styles);
+categories include plug fuses and cartridge fuses (Class RK, J, L, etc.)
+with interrupting ratings and current-limiting behavior.</p>
+<p><strong>GFCI</strong> &#8212; ground-fault circuit interrupter: trips on
+small imbalance between hot and neutral (people protection), not a
+replacement for overcurrent devices.</p>
+<p><strong>AFCI</strong> &#8212; arc-fault circuit interrupter: detects
+dangerous arcing signatures (fire protection), required in many dwelling
+areas per Article 210.</p>
+<p><strong>Combination devices / dual-function</strong> &#8212; AFCI+GFCI
+where required.</p>
+<h2 data-number="5.3" id="standard-breaker-sizes"><span
+class="header-section-number">5.3</span> Standard Breaker Sizes</h2>
+<p>Article 240 lists standard ampere ratings (15, 20, 25, 30, 35, 40,
+45, 50, &#8230;). When conductor ampacity does not match a standard size,
+<strong>you may round up</strong> to the next standard size under the
+conditions in 240.4(B) &#8212; but <strong>not</strong> for small conductor
+rules and other exceptions that forbid it. Know when round-up is allowed
+and when you must stay at or below ampacity.</p>
+<h3 data-number="5.3.1"
+id="small-conductor-protection-memorize-the-idea"><span
+class="header-section-number">5.3.1</span> Small conductor protection
+(memorize the idea)</h3>
+<p>For general lighting/receptacle branch circuits, protective devices
+for 14, 12, and 10 AWG copper are typically limited to <strong>15 A, 20
+A, and 30 A</strong> respectively (with specific Code exceptions for
+certain loads like motors, air conditioning, etc., that have their own
+articles).</p>
+<h2 data-number="5.4" id="continuous-loads-and-ocpds"><span
+class="header-section-number">5.4</span> Continuous Loads and OCPDs</h2>
+<p>For continuous loads, branch-circuit OCPDs and conductors are
+generally sized at <strong>125%</strong> of the continuous load (plus
+100% of noncontinuous), unless the assembly is listed for 100%
+continuous operation.</p>
+<p><strong>Example.</strong> Continuous load 16 A on a branch
+circuit:</p>
+<p>[ 16 = 20&#160;A ]</p>
+<p>A 20 A breaker and conductors rated at least 20 A (after adjustments)
+are the usual starting point.</p>
+<h2 data-number="5.5"
+id="protecting-conductors-vs-protecting-equipment"><span
+class="header-section-number">5.5</span> Protecting Conductors vs
+Protecting Equipment</h2>
+<p>Conductors must be protected per their ampacity rules. Some equipment
+(motors, welders, transformers, air conditioning) allows
+<strong>branch-circuit OCPDs larger than conductor ampacity</strong>
+within Article 430 / 440 / etc. limits, because startup current would
+nuisance-trip a &#8220;strict ampacity&#8221; breaker. Always check the specific
+article &#8212; motor questions are Chapter 8, but the philosophy starts
+here.</p>
+<h2 data-number="5.6" id="location-of-overcurrent-devices"><span
+class="header-section-number">5.6</span> Location of Overcurrent
+Devices</h2>
+<p>OCPDs must be readily accessible (with defined exceptions).
+Supplementary protection vs branch protection vs feeder protection vs
+service protection sit at different points in the system. Service OCPDs
+have special rules in Article 230; you generally do not put the service
+disconnect in a bathroom, and working clearances from Article 110
+apply.</p>
+<h2 data-number="5.7" id="branch-circuits-article-210"><span
+class="header-section-number">5.7</span> Branch Circuits (Article
+210)</h2>
+<p>A <strong>branch circuit</strong> runs from the final OCPD to
+outlets.</p>
+<h3 data-number="5.7.1" id="ratings"><span
+class="header-section-number">5.7.1</span> Ratings</h3>
+<p>Common branch-circuit ratings: 15, 20, 30, 40, 50 A (and others for
+specific loads). Receptacle ratings must be compatible with circuit
+ratings (e.g., 15 A receptacles allowed on 20 A circuits under the usual
+multioutlet rules; single receptacle on a 20 A circuit must be 20 A
+rated).</p>
+<h3 data-number="5.7.2"
+id="dwelling-receptacle-requirements-high-yield"><span
+class="header-section-number">5.7.2</span> Dwelling receptacle
+requirements (high-yield)</h3>
+<p>Expect questions on:</p>
+<ul>
+<li><strong>GFCI</strong> protection for bathrooms, garages, outdoors,
+crawl spaces, kitchens (countertop), laundry, basements, near sinks,
+etc. &#8212; read the current 210.8 list; it expands over Code cycles.</li>
+<li><strong>AFCI</strong> protection for many dwelling living areas &#8212;
+read 210.12.</li>
+<li>Bathroom receptacle on a <strong>20 A</strong> circuit (dwelling),
+with limits on what else may share it.</li>
+<li>Kitchen <strong>small-appliance branch circuits</strong>: at least
+<strong>two 20 A</strong> circuits for countertop receptacles; laundry
+circuit requirements.</li>
+<li>Spacing of receptacles in dwellings (12 ft rule along walls,
+counters, etc.).</li>
+<li>Outdoor receptacle requirements.</li>
+</ul>
+<p>Do not memorize an outdated list from an old study guide &#8212; verify
+against <strong>NEC 2023</strong> as adopted/amended in Utah.</p>
+<h3 data-number="5.7.3"
+id="multioutlet-vs-individual-branch-circuits"><span
+class="header-section-number">5.7.3</span> Multioutlet vs individual
+branch circuits</h3>
+<p>Individual branch circuits serve one utilization equipment.
+Multioutlet circuits serve multiple luminaires/receptacles. Load
+calculations differ.</p>
+<h2 data-number="5.8" id="feeders-article-215"><span
+class="header-section-number">5.8</span> Feeders (Article 215)</h2>
+<p><strong>Feeders</strong> supply panelboards or other distribution
+equipment downstream of the service (or separately derived system) and
+upstream of final branch OCPDs.</p>
+<p>Feeder sizing:</p>
+<ul>
+<li>Calculate load (Article 220)</li>
+<li>Apply continuous load factors</li>
+<li>Select conductors and OCPDs</li>
+<li>Include EGCs sized from supply-side OCPD per 250.122</li>
+<li>Watch neutral sizing when neutrals carry large nonlinear loads
+(harmonics) &#8212; neutrals may need to be counted/ sized carefully</li>
+</ul>
+<h2 data-number="5.9" id="load-calculations-article-220-strategy"><span
+class="header-section-number">5.9</span> Load Calculations (Article 220)
+&#8212; Strategy</h2>
+<p>Article 220 is a procedure, not a single formula. Exam approach:</p>
+<ol type="1">
+<li>Identify occupancy (dwelling, optional calculation vs standard,
+etc.).</li>
+<li>General lighting load by floor area (VA/ft&#178; from tables) + small
+appliance &amp; laundry where required.</li>
+<li>Apply demand factors where tables allow.</li>
+<li>Add fixed appliances, dryers, ranges (use the range/dryer tables &#8212;
+do not invent).</li>
+<li>Heating vs cooling &#8212; typically the larger load, not both, when
+noncoincident.</li>
+<li>Convert VA to amperes at system voltage: (I = VA / E) (1φ) or (I =
+VA / (E)) (3φ).</li>
+</ol>
+<p><strong>Example sketch (simplified dwelling idea):</strong> 1500 ft&#178;
+dwelling &#215; 3 VA/ft&#178; = 4500 VA general lighting, plus two small-appliance
+circuits (1500 VA each) and laundry (1500 VA), then apply demand factors
+from the dwelling table to portions of that load, then add
+range/dryer/heating per tables. Work carefully line by line; arithmetic
+errors fail as many candidates as concept errors.</p>
+<h2 data-number="5.10" id="services-article-230"><span
+class="header-section-number">5.10</span> Services (Article 230)</h2>
+<p>The <strong>service</strong> is the conductors and equipment
+connecting the utility supply to the premises wiring system.</p>
+<p>Key ideas:</p>
+<ul>
+<li><strong>Service-entrance conductors</strong> &#8212; from service point
+toward service disconnect</li>
+<li><strong>Service disconnect</strong> &#8212; readily accessible, outside or
+nearest point of entry rules</li>
+<li>Number of service disconnects grouping rules (often max six in a
+group &#8212; know the current language)</li>
+<li>Service conductor ampacity vs calculated load</li>
+<li>Clearances overhead (above roofs, driveways, yards) &#8212; table/lookup
+questions</li>
+<li>Working space about equipment (Article 110.26): depth, width,
+height, dedicated space above</li>
+</ul>
+<h3 data-number="5.10.1" id="service-grounding-preview"><span
+class="header-section-number">5.10.1</span> Service grounding
+preview</h3>
+<p>Services require grounding electrode systems and bonding of service
+equipment &#8212; Chapter 6. Many &#8220;service&#8221; exam questions are actually
+grounding questions in disguise.</p>
+<h2 data-number="5.11" id="panelboards-and-availability"><span
+class="header-section-number">5.11</span> Panelboards and
+Availability</h2>
+<p>Panelboards (Article 408) must have appropriate bus ratings,
+overcurrent protection, phase identification, and directory clarity.
+Feed-through / lug kits, breaker listings, and series ratings appear on
+harder questions. For Journeyman level, focus on: correct breaker type
+for the panel, unused openings closed, and neutral/ground bar separation
+rules in subpanels vs service equipment.</p>
+<h3 data-number="5.11.1"
+id="service-equipment-vs-subpanel-bonding"><span
+class="header-section-number">5.11.1</span> Service equipment vs
+subpanel bonding</h3>
+<p>At the <strong>service disconnect</strong>, grounded conductor
+(neutral) is bonded to the enclosure / grounding electrode system.</p>
+<p>In a <strong>downstream subpanel</strong>, neutrals and grounds are
+typically <strong>isolated</strong>: neutrals on an insulated neutral
+bar, EGCs on a grounding bar bonded to the can, with a four-wire feeder
+(two hots, neutral, EGC) on single-phase, or five-wire on three-phase
+with neutral.</p>
+<p>This is one of the most important installation concepts in the trade
+&#8212; and a frequent exam target.</p>
+<h2 data-number="5.12" id="article-110-essentials"><span
+class="header-section-number">5.12</span> Article 110 Essentials</h2>
+<p>Before leaving general requirements, lock in:</p>
+<ul>
+<li><strong>Examination, identification, installation, use</strong> of
+equipment listed/labeled</li>
+<li><strong>Working clearances</strong> about live parts /
+equipment</li>
+<li><strong>Guarding</strong> of live parts</li>
+<li><strong>Interrupting rating</strong> &#8212; OCPDs must be able to
+interrupt available fault current</li>
+<li><strong>Temperature</strong> limitations at terminations</li>
+<li><strong>Arc-flash</strong> labeling requirements (increasingly
+common)</li>
+</ul>
+<p>Available fault current and AIC ratings matter: a 10 kAIC breaker on
+a service with 22 kA available is wrong even if the ampere rating
+matches the load.</p>
+<h2 data-number="5.13" id="practice-problems"><span
+class="header-section-number">5.13</span> Practice Problems</h2>
+<ol type="1">
+<li>A continuous water heater draws 19 A at 240 V on an individual
+branch circuit. What minimum standard breaker size do you evaluate first
+using the 125% rule?</li>
+<li>Can you generally protect 12 AWG copper branch-circuit conductors
+with a 30 A breaker for general receptacle use?</li>
+<li>Distinguishing: conductors from a main service panel to a garage
+subpanel are usually ________; conductors from the garage subpanel
+breaker to a receptacle are ________.</li>
+<li>Why are neutrals and grounding bars separated in a subpanel but
+bonded at service equipment?</li>
+<li>A balanced 208 V three-phase feeder load is 40,000 VA. What is the
+line current?</li>
+<li>Name two dwelling areas where GFCI protection is commonly required
+for receptacles.</li>
+</ol>
+<h3 data-number="5.13.1" id="answers"><span
+class="header-section-number">5.13.1</span> Answers</h3>
+<ol type="1">
+<li>(19 = 23.75) A &#8594; next standard size typically <strong>25 A</strong>
+if conductors/equipment allow (verify heater nameplate and 422 rules;
+many heaters use 30 A circuits &#8212; read the question&#8217;s givens).</li>
+<li>No &#8212; small conductor rules generally limit 12 AWG copper to 20 A for
+that use.</li>
+<li>Feeders; branch circuits.</li>
+<li>To keep normal neutral current off equipment grounding paths and
+enclosures downstream; bonding at the service establishes the system
+grounding connection once.</li>
+<li>(I = 40000/(208) ) A.</li>
+<li>Examples: bathrooms, outdoors, garages, kitchen countertops &#8212;
+confirm full current list in 210.8.</li>
+</ol>
+<h2 data-number="5.14" id="looking-ahead"><span
+class="header-section-number">5.14</span> Looking Ahead</h2>
+<p>Chapter 6 is the largest single written topic on Utah&#8217;s Journeyman
+exam: <strong>grounding and bonding</strong>. Everything in this chapter
+about clearing faults only works if the ground-fault path is continuous,
+low impedance, and correctly sized.</p>
+<hr />
 <!--postEnd-->
               </div>
 </div>
@@ -1182,8 +1121,8 @@ and it&#8217;s where the next two chapters go.</p>
 
 <script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/321148285-widgets.js"></script>
 <script type='text/javascript'>
-window['__wavt'] = 'AEUoTZo2Ou4gfdnRyLAgF41N4dTv:1784236611299';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d9088886865899659654','//book1013.blogspot.com/2000/02/5.html','9088886865899659654');
-_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '9088886865899659654', 'title': 'book1013', 'url': 'https://book1013.blogspot.com/2000/02/5.html', 'canonicalUrl': 'https://book1013.blogspot.com/2000/02/5.html', 'homepageUrl': 'https://book1013.blogspot.com/', 'searchUrl': 'https://book1013.blogspot.com/search', 'canonicalHomepageUrl': 'https://book1013.blogspot.com/', 'blogspotFaviconUrl': 'https://book1013.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22book1013 - RSS\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/9088886865899659654/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/6999206942033710022/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': true, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/c5aecb47b31d09da', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '6999206942033710022', 'pageName': '5. Making Decisions', 'pageTitle': 'book1013: 5. Making Decisions'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': '5. Making Decisions', 'description': 'monaco  5  Making Decisions \r 5.1  if, else if, else \r Programs become truly useful when they can make decisions. Instead of\r running the sa...', 'url': 'https://book1013.blogspot.com/2000/02/5.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 6999206942033710022}}]);
+window['__wavt'] = 'AEUoTZpUpBC0SXtV5XiJPw_6T12z:1784270489582';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d9088886865899659654','//book1013.blogspot.com/2000/02/5.html','9088886865899659654');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '9088886865899659654', 'title': 'book1013', 'url': 'https://book1013.blogspot.com/2000/02/5.html', 'canonicalUrl': 'https://book1013.blogspot.com/2000/02/5.html', 'homepageUrl': 'https://book1013.blogspot.com/', 'searchUrl': 'https://book1013.blogspot.com/search', 'canonicalHomepageUrl': 'https://book1013.blogspot.com/', 'blogspotFaviconUrl': 'https://book1013.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22book1013 - RSS\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/9088886865899659654/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/6999206942033710022/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': true, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/0b901e5396ee8015', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '6999206942033710022', 'pageName': '5. Overcurrent Protection, Services,\nFeeders, and Branch Circuits', 'pageTitle': 'book1013: 5. Overcurrent Protection, Services,\nFeeders, and Branch Circuits'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': '5. Overcurrent Protection, Services,\nFeeders, and Branch Circuits', 'description': '5  Overcurrent Protection, Services, Feeders, and Branch Circuits  This chapter covers three of the densest exam areas: Overcurrent Protecti...', 'url': 'https://book1013.blogspot.com/2000/02/5.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 6999206942033710022}}]);
 _WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'mainblogsec', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1434207229-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/828616780-lightbox_bundle.css'}, 'displayModeFull'));
 </script>
 </body>

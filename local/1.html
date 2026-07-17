@@ -782,7 +782,7 @@ right: .75rem;
     }    
 
   </script>
-<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=210ce249-8dea-4558-980a-5c1935544cb7' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=210ce249-8dea-4558-980a-5c1935544cb7' rel='stylesheet'/></noscript>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=52990b10-826a-4186-92b2-887cd56185a0' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9088886865899659654&amp;zx=52990b10-826a-4186-92b2-887cd56185a0' rel='stylesheet'/></noscript>
 <meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
 <meta name='google-adsense-platform-domain' content='blogspot.com'/>
 
@@ -825,6 +825,7 @@ Utah</span></h1>
 <button class='nav' id='next-button' onclick='navigate(&#39;next&#39;)'><span class='material-symbols-outlined'>arrow_forward</span></button>
               
               <!--postBegin--><div class="module">andy</div>
+<div class="module">a-quiz</div>
 <h1 data-number="1" id="becoming-an-electrician-in-utah"><span
 class="header-section-number">1</span> Becoming an Electrician in
 Utah</h1>
@@ -1156,115 +1157,104 @@ fundamentals.</p>
 <hr />
 <h2 data-number="1.10" id="demo"><span
 class="header-section-number">1.10</span> Demo</h2>
-<circuit-lab height="800">
-<script type="text/yaml">
-title: Doorbell Demo Lab
-margin: 40
-passMessage: Pass — Front has its own chime; Rear and Side share the Rear chime.
-hints:
-  demo: >-
-    Demo: press Front for one sound; Rear and Side share the other
-    (as in a typical residential chime). Double-click a wire to bend it;
-    Undo (Ctrl/Cmd+Z) reverses wire edits.
-  lab: >-
-    Lab: wire so Front has its own path and Rear + Side share the Rear chime.
-    Color matches the terminal you click. Undo reverses edits. Then Check to grade.
+<p>```circuit-lab height=“800” title: Doorbell Demo Lab margin: 40
+passMessage: Pass — Front has its own chime; Rear and Side share the
+Rear chime. hints: demo: &gt;- Demo: press Front for one sound; Rear and
+Side share the other (as in a typical residential chime). Double-click a
+wire to bend it; Undo (Ctrl/Cmd+Z) reverses wire edits. lab: &gt;- Lab:
+wire so Front has its own path and Rear + Side share the Rear chime.
+Color matches the terminal you click. Undo reverses edits. Then Check to
+grade.</p>
+<h1 data-number="2"
+id="positions-numbers-percents-42-or-expressions"><span
+class="header-section-number">2</span> Positions: numbers, percents
+(“42%”), or expressions</h1>
+<h1 data-number="3"
+id="margin-left-top-center-right-bottom-with-optional---offset."><span
+class="header-section-number">3</span> (margin, left, top, center,
+right, bottom) with optional +/- offset.</h1>
+<p>components: - id: chime type: chime x: margin y: margin - id:
+transformer type: transformer x: right-190 y: margin - id: terminalBlock
+type: terminal-block x: center-140 y: 42% - id: power type: power x:
+margin y: bottom-128 - id: buttonFront type: button label: Front x:
+center-160 y: bottom-118 - id: buttonRear type: button label: Rear x:
+center-48 y: bottom-118 - id: buttonSide type: button label: Side x:
+center+64 y: bottom-118</p>
+<p>simulation: supply: hot: transformer.sec-hot return:
+transformer.sec-com loads: - id: front requireHot: chime.trans signal:
+chime.front feedback: { type: sound, profile: dingDong } - id: rear
+requireHot: chime.trans signal: chime.rear feedback: { type: sound,
+profile: buzz }</p>
+<p>grading: required: - power - transformer - chime - terminalBlock -
+buttonFront - buttonRear - buttonSide continuity: - from:
+transformer.sec-hot to: chime.trans fail: “Chime Trans is not powered
+from the transformer 24V hot.” whenClosed: - switch: buttonFront
+energize: [front] - switch: buttonRear energize: [rear] - switch:
+buttonSide energize: [rear]</p>
+<h1 data-number="4"
+id="demo-mode-starts-with-these-wires.-lab-mode-starts-empty-student-wires-it."><span
+class="header-section-number">4</span> Demo mode starts with these
+wires. Lab mode starts empty (student wires it).</h1>
+<p>demo: wires: # 120V: power → terminal block → transformer - { from:
+power.l1, to: terminalBlock.l1, color: blue } - { from: power.n, to:
+terminalBlock.n, color: gray } - { from: power.g, to: terminalBlock.g,
+color: green } - { from: terminalBlock.l1, to: transformer.pri-l1,
+color: blue } - { from: terminalBlock.n, to: transformer.pri-n, color:
+gray } - { from: terminalBlock.g, to: transformer.pri-g, color: green }
+# 24V: transformer hot → chime Trans; COM → buttons - { from:
+transformer.sec-hot, to: chime.trans, color: red } - { from:
+transformer.sec-com, to: terminalBlock.com, color: gray } - { from:
+terminalBlock.com, to: buttonFront.com, color: gray } - { from:
+terminalBlock.com, to: buttonRear.com, color: gray } - { from:
+terminalBlock.com, to: buttonSide.com, color: gray } # Front own path;
+Rear + Side share Rear chime - { from: buttonFront.sig, to:
+terminalBlock.sig-f, color: red } - { from: terminalBlock.sig-f, to:
+chime.front, color: red } - { from: buttonRear.sig, to:
+terminalBlock.sig-r, color: red } - { from: buttonSide.sig, to:
+terminalBlock.sig-s, color: red } - { from: terminalBlock.sig-s, to:
+terminalBlock.sig-r, color: red } - { from: terminalBlock.sig-r, to:
+chime.rear, color: red } ```</p>
+<h2 data-number="4.1" id="check-your-understanding"><span
+class="header-section-number">4.1</span> Check Your Understanding</h2>
+<a-quiz>
+<script type="text/plain">
+1. As of August 1, 2025, how is the Utah Journeyman Electrician written exam structured?
+a) Separate Theory and Code exams
+*b) One combined exam covering theory and code
+c) A practical exam only
+d) An open-book oral interview
 
-# Positions: numbers, percents ("42%"), or expressions
-# (margin, left, top, center, right, bottom) with optional +/- offset.
-components:
-  - id: chime
-    type: chime
-    x: margin
-    y: margin
-  - id: transformer
-    type: transformer
-    x: right-190
-    y: margin
-  - id: terminalBlock
-    type: terminal-block
-    x: center-140
-    y: 42%
-  - id: power
-    type: power
-    x: margin
-    y: bottom-128
-  - id: buttonFront
-    type: button
-    label: Front
-    x: center-160
-    y: bottom-118
-  - id: buttonRear
-    type: button
-    label: Rear
-    x: center-48
-    y: bottom-118
-  - id: buttonSide
-    type: button
-    label: Side
-    x: center+64
-    y: bottom-118
+2. What score do you need to pass the Utah Journeyman written exam?
+a) 60%
+b) 70%
+*c) 75%
+d) 90%
 
-simulation:
-  supply:
-    hot: transformer.sec-hot
-    return: transformer.sec-com
-  loads:
-    - id: front
-      requireHot: chime.trans
-      signal: chime.front
-      feedback: { type: sound, profile: dingDong }
-    - id: rear
-      requireHot: chime.trans
-      signal: chime.rear
-      feedback: { type: sound, profile: buzz }
+3. Which references are typically allowed on the Utah Journeyman written exam?
+a) Any electrical textbook you bring
+*b) The 2023 NEC, Ugly's 2023, and listed Utah statutes/rules
+c) Only a non-programmable calculator
+d) NFPA 70E alone
 
-grading:
-  required:
-    - power
-    - transformer
-    - chime
-    - terminalBlock
-    - buttonFront
-    - buttonRear
-    - buttonSide
-  continuity:
-    - from: transformer.sec-hot
-      to: chime.trans
-      fail: "Chime Trans is not powered from the transformer 24V hot."
-  whenClosed:
-    - switch: buttonFront
-      energize: [front]
-    - switch: buttonRear
-      energize: [rear]
-    - switch: buttonSide
-      energize: [rear]
+4. What is the NEC primarily?
+a) A complete how-to manual for every installation method
+*b) A minimum safety standard for safeguarding persons and property
+c) A Utah-only wage and licensing handbook
+d) A manufacturer catalog of listed products
 
-# Demo mode starts with these wires. Lab mode starts empty (student wires it).
-demo:
-  wires:
-    # 120V: power → terminal block → transformer
-    - { from: power.l1, to: terminalBlock.l1, color: blue }
-    - { from: power.n, to: terminalBlock.n, color: gray }
-    - { from: power.g, to: terminalBlock.g, color: green }
-    - { from: terminalBlock.l1, to: transformer.pri-l1, color: blue }
-    - { from: terminalBlock.n, to: transformer.pri-n, color: gray }
-    - { from: terminalBlock.g, to: transformer.pri-g, color: green }
-    # 24V: transformer hot → chime Trans; COM → buttons
-    - { from: transformer.sec-hot, to: chime.trans, color: red }
-    - { from: transformer.sec-com, to: terminalBlock.com, color: gray }
-    - { from: terminalBlock.com, to: buttonFront.com, color: gray }
-    - { from: terminalBlock.com, to: buttonRear.com, color: gray }
-    - { from: terminalBlock.com, to: buttonSide.com, color: gray }
-    # Front own path; Rear + Side share Rear chime
-    - { from: buttonFront.sig, to: terminalBlock.sig-f, color: red }
-    - { from: terminalBlock.sig-f, to: chime.front, color: red }
-    - { from: buttonRear.sig, to: terminalBlock.sig-r, color: red }
-    - { from: buttonSide.sig, to: terminalBlock.sig-s, color: red }
-    - { from: terminalBlock.sig-s, to: terminalBlock.sig-r, color: red }
-    - { from: terminalBlock.sig-r, to: chime.rear, color: red }
-    </script>
-<p></circuit-lab></p>
+5. Which three hazards drive almost every electrical safety rule in this chapter?
+*a) Shock, arc flash/blast, and fire
+b) Noise, vibration, and corrosion
+c) Theft, vandalism, and weather
+d) Cost, schedule, and aesthetics
+
+6. In the working picture from this chapter, what is voltage?
+a) The rate of charge flow measured in amperes
+*b) The pressure that pushes charge through a circuit
+c) Opposition to current in ohms only
+d) The heat produced by a loose connection
+</script>
+<p></a-quiz></p>
 <!--postEnd-->
               </div>
 </div>
@@ -1287,8 +1277,8 @@ demo:
 
 <script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/321148285-widgets.js"></script>
 <script type='text/javascript'>
-window['__wavt'] = 'AEUoTZpjBzUZcurFcN2dYPW5FQYH:1784236418661';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d9088886865899659654','//book1013.blogspot.com/2000/02/1.html','9088886865899659654');
-_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '9088886865899659654', 'title': 'book1013', 'url': 'https://book1013.blogspot.com/2000/02/1.html', 'canonicalUrl': 'https://book1013.blogspot.com/2000/02/1.html', 'homepageUrl': 'https://book1013.blogspot.com/', 'searchUrl': 'https://book1013.blogspot.com/search', 'canonicalHomepageUrl': 'https://book1013.blogspot.com/', 'blogspotFaviconUrl': 'https://book1013.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22book1013 - RSS\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/9088886865899659654/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/7472761618423615688/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': true, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/c5aecb47b31d09da', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '7472761618423615688', 'pageName': '1. Welcome to Programming', 'pageTitle': 'book1013: 1. Welcome to Programming'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': '1. Welcome to Programming', 'description': 'monaco  1  Welcome to Programming \r Real wealth is created by operations \u2014 the work of turning inputs\r into something worth more than the pa...', 'url': 'https://book1013.blogspot.com/2000/02/1.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 7472761618423615688}}]);
+window['__wavt'] = 'AEUoTZqF2q0AQVsD1omUDydkaLrz:1784270488374';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d9088886865899659654','//book1013.blogspot.com/2000/02/1.html','9088886865899659654');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '9088886865899659654', 'title': 'book1013', 'url': 'https://book1013.blogspot.com/2000/02/1.html', 'canonicalUrl': 'https://book1013.blogspot.com/2000/02/1.html', 'homepageUrl': 'https://book1013.blogspot.com/', 'searchUrl': 'https://book1013.blogspot.com/search', 'canonicalHomepageUrl': 'https://book1013.blogspot.com/', 'blogspotFaviconUrl': 'https://book1013.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22book1013 - RSS\x22 href\x3d\x22https://book1013.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/9088886865899659654/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22book1013 - Atom\x22 href\x3d\x22https://book1013.blogspot.com/feeds/7472761618423615688/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': true, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/0b901e5396ee8015', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '7472761618423615688', 'pageName': '1. Becoming an Electrician in\nUtah', 'pageTitle': 'book1013: 1. Becoming an Electrician in\nUtah'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': '1. Becoming an Electrician in\nUtah', 'description': 'andy  1  Becoming an Electrician in Utah  Electricity is invisible until it isn\u2019t \u2014 until a light turns on, a motor starts, or a fault takes...', 'url': 'https://book1013.blogspot.com/2000/02/1.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 7472761618423615688}}]);
 _WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'mainblogsec', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1434207229-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/828616780-lightbox_bundle.css'}, 'displayModeFull'));
 </script>
 </body>
