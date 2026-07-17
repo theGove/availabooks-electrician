@@ -1157,65 +1157,113 @@ fundamentals.</p>
 <hr />
 <h2 data-number="1.10" id="demo"><span
 class="header-section-number">1.10</span> Demo</h2>
-<p>```circuit-lab height=“800” title: Doorbell Demo Lab margin: 40
-passMessage: Pass — Front has its own chime; Rear and Side share the
-Rear chime. hints: demo: &gt;- Demo: press Front for one sound; Rear and
-Side share the other (as in a typical residential chime). Double-click a
-wire to bend it; Undo (Ctrl/Cmd+Z) reverses wire edits. lab: &gt;- Lab:
-wire so Front has its own path and Rear + Side share the Rear chime.
-Color matches the terminal you click. Undo reverses edits. Then Check to
-grade.</p>
-<h1 data-number="2"
-id="positions-numbers-percents-42-or-expressions"><span
-class="header-section-number">2</span> Positions: numbers, percents
-(“42%”), or expressions</h1>
-<h1 data-number="3"
-id="margin-left-top-center-right-bottom-with-optional---offset."><span
-class="header-section-number">3</span> (margin, left, top, center,
-right, bottom) with optional +/- offset.</h1>
-<p>components: - id: chime type: chime x: margin y: margin - id:
-transformer type: transformer x: right-190 y: margin - id: terminalBlock
-type: terminal-block x: center-140 y: 42% - id: power type: power x:
-margin y: bottom-128 - id: buttonFront type: button label: Front x:
-center-160 y: bottom-118 - id: buttonRear type: button label: Rear x:
-center-48 y: bottom-118 - id: buttonSide type: button label: Side x:
-center+64 y: bottom-118</p>
-<p>simulation: supply: hot: transformer.sec-hot return:
-transformer.sec-com loads: - id: front requireHot: chime.trans signal:
-chime.front feedback: { type: sound, profile: dingDong } - id: rear
-requireHot: chime.trans signal: chime.rear feedback: { type: sound,
-profile: buzz }</p>
-<p>grading: required: - power - transformer - chime - terminalBlock -
-buttonFront - buttonRear - buttonSide continuity: - from:
-transformer.sec-hot to: chime.trans fail: “Chime Trans is not powered
-from the transformer 24V hot.” whenClosed: - switch: buttonFront
-energize: [front] - switch: buttonRear energize: [rear] - switch:
-buttonSide energize: [rear]</p>
-<h1 data-number="4"
-id="demo-mode-starts-with-these-wires.-lab-mode-starts-empty-student-wires-it."><span
-class="header-section-number">4</span> Demo mode starts with these
-wires. Lab mode starts empty (student wires it).</h1>
-<p>demo: wires: # 120V: power → terminal block → transformer - { from:
-power.l1, to: terminalBlock.l1, color: blue } - { from: power.n, to:
-terminalBlock.n, color: gray } - { from: power.g, to: terminalBlock.g,
-color: green } - { from: terminalBlock.l1, to: transformer.pri-l1,
-color: blue } - { from: terminalBlock.n, to: transformer.pri-n, color:
-gray } - { from: terminalBlock.g, to: transformer.pri-g, color: green }
-# 24V: transformer hot → chime Trans; COM → buttons - { from:
-transformer.sec-hot, to: chime.trans, color: red } - { from:
-transformer.sec-com, to: terminalBlock.com, color: gray } - { from:
-terminalBlock.com, to: buttonFront.com, color: gray } - { from:
-terminalBlock.com, to: buttonRear.com, color: gray } - { from:
-terminalBlock.com, to: buttonSide.com, color: gray } # Front own path;
-Rear + Side share Rear chime - { from: buttonFront.sig, to:
-terminalBlock.sig-f, color: red } - { from: terminalBlock.sig-f, to:
-chime.front, color: red } - { from: buttonRear.sig, to:
-terminalBlock.sig-r, color: red } - { from: buttonSide.sig, to:
-terminalBlock.sig-s, color: red } - { from: terminalBlock.sig-s, to:
-terminalBlock.sig-r, color: red } - { from: terminalBlock.sig-r, to:
-chime.rear, color: red } ```</p>
-<h2 data-number="4.1" id="check-your-understanding"><span
-class="header-section-number">4.1</span> Check Your Understanding</h2>
+<pre class="circuit-lab" height="800"><code>title: Doorbell Demo Lab
+margin: 40
+passMessage: Pass — Front has its own chime; Rear and Side share the Rear chime.
+hints:
+  demo: &gt;-
+    Demo: press Front for one sound; Rear and Side share the other
+    (as in a typical residential chime). Double-click a wire to bend it;
+    Undo (Ctrl/Cmd+Z) reverses wire edits.
+  lab: &gt;-
+    Lab: wire so Front has its own path and Rear + Side share the Rear chime.
+    Color matches the terminal you click. Undo reverses edits. Then Check to grade.
+
+# Positions: numbers, percents (&quot;42%&quot;), or expressions
+# (margin, left, top, center, right, bottom) with optional +/- offset.
+components:
+  - id: chime
+    type: chime
+    x: margin
+    y: margin
+  - id: transformer
+    type: transformer
+    x: right-190
+    y: margin
+  - id: terminalBlock
+    type: terminal-block
+    x: center-140
+    y: 42%
+  - id: power
+    type: power
+    x: margin
+    y: bottom-128
+  - id: buttonFront
+    type: button
+    label: Front
+    x: center-160
+    y: bottom-118
+  - id: buttonRear
+    type: button
+    label: Rear
+    x: center-48
+    y: bottom-118
+  - id: buttonSide
+    type: button
+    label: Side
+    x: center+64
+    y: bottom-118
+
+simulation:
+  supply:
+    hot: transformer.sec-hot
+    return: transformer.sec-com
+  loads:
+    - id: front
+      requireHot: chime.trans
+      signal: chime.front
+      feedback: { type: sound, profile: dingDong }
+    - id: rear
+      requireHot: chime.trans
+      signal: chime.rear
+      feedback: { type: sound, profile: buzz }
+
+grading:
+  required:
+    - power
+    - transformer
+    - chime
+    - terminalBlock
+    - buttonFront
+    - buttonRear
+    - buttonSide
+  continuity:
+    - from: transformer.sec-hot
+      to: chime.trans
+      fail: &quot;Chime Trans is not powered from the transformer 24V hot.&quot;
+  whenClosed:
+    - switch: buttonFront
+      energize: [front]
+    - switch: buttonRear
+      energize: [rear]
+    - switch: buttonSide
+      energize: [rear]
+
+# Demo mode starts with these wires. Lab mode starts empty (student wires it).
+demo:
+  wires:
+    # 120V: power → terminal block → transformer
+    - { from: power.l1, to: terminalBlock.l1, color: blue }
+    - { from: power.n, to: terminalBlock.n, color: gray }
+    - { from: power.g, to: terminalBlock.g, color: green }
+    - { from: terminalBlock.l1, to: transformer.pri-l1, color: blue }
+    - { from: terminalBlock.n, to: transformer.pri-n, color: gray }
+    - { from: terminalBlock.g, to: transformer.pri-g, color: green }
+    # 24V: transformer hot → chime Trans; COM → buttons
+    - { from: transformer.sec-hot, to: chime.trans, color: red }
+    - { from: transformer.sec-com, to: terminalBlock.com, color: gray }
+    - { from: terminalBlock.com, to: buttonFront.com, color: gray }
+    - { from: terminalBlock.com, to: buttonRear.com, color: gray }
+    - { from: terminalBlock.com, to: buttonSide.com, color: gray }
+    # Front own path; Rear + Side share Rear chime
+    - { from: buttonFront.sig, to: terminalBlock.sig-f, color: red }
+    - { from: terminalBlock.sig-f, to: chime.front, color: red }
+    - { from: buttonRear.sig, to: terminalBlock.sig-r, color: red }
+    - { from: buttonSide.sig, to: terminalBlock.sig-s, color: red }
+    - { from: terminalBlock.sig-s, to: terminalBlock.sig-r, color: red }
+    - { from: terminalBlock.sig-r, to: chime.rear, color: red }</code></pre>
+<h2 data-number="1.11" id="check-your-understanding"><span
+class="header-section-number">1.11</span> Check Your Understanding</h2>
 <a-quiz>
 <script type="text/plain">
 1. As of August 1, 2025, how is the Utah Journeyman Electrician written exam structured?
