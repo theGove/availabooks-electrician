@@ -1,5 +1,11 @@
 {
   "blogUrl": "book1013.blogspot.com",
+  "title": "Electrician",
+  "authors": [
+     "Andy Jones",
+     "Elijah Allen"
+   ],
+   "chapterLabel": "Chapter",  
   "pro": {
     "contentDir": "../pro/content",
     "slug": "electrician",
